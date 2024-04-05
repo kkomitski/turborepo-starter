@@ -1,0 +1,17 @@
+{
+  "version": "2.1",
+  "assets": "https://assets.cmcmarkets.com",
+  "cupcake": "https://oaf.cmcmarkets.com",
+  "ws": "https://ws.cmcmarkets.com",
+  "signup": "https://signup.cmcmarkets.com",
+  "pegaChatHost": "https://chat.cmcmarkets.com",
+  "pegaChatQueue": "https://oaf.cmcmarkets.com/CmcApplicationFormsController/getPegaChatQueueREST",
+  "pegaChatLoader": "https://chat.cmcmarkets.com/scripts/loaders/chatLoader",
+  "pegaChatToken": "5a58cda481dd2d321a5aad90",
+  "pegaChatServerURL": "/prweb/PRChat/app/CMCCSSelfService_3455",
+  "pegaChatProactiveServiceURL": "/prweb/PRRestService/CSSelfServiceNBA/V1/Container",
+  "pegaChatScriptURL": "https://oaf.cmcmarkets.com/prweb/app/default/?pyActivity=pzIncludeMashupScripts",
+  "pegaChatChannelId": "bot0ed4b17956da47f2955104095ec20f7e",
+  "pegaChatHelpConfigurationName": "bot0ed4b17_legacychat",
+  "pegaChatCRMHost": "https://oaf.cmcmarkets.com"
+}

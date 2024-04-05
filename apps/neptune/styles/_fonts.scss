@@ -1,0 +1,57 @@
+// Fonts
+@mixin fontRoman {
+    font-family: "NeueHaasGrotDisp-55Roman", "Helvetica", sans-serif;
+    font-weight: 450;
+    font-display: swap;
+  }
+  
+  @mixin fontMedium {
+    font-family: "NeueHaasGrotDisp-65Medium", "Helvetica", sans-serif;
+    font-weight: normal;
+    font-display: swap;
+  }
+  
+  @mixin fontItalic {
+    font-family: "NeueHaasGrotDisp-56Italic", "Helvetica", sans-serif;
+    font-weight: 450;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'NeueHaasGrotDisp-55Roman';
+    src: url('https://assets.cmcmarkets.com/fonts/neuehaasgrotdisp-55roman-webfont.eot');
+    src: url('https://assets.cmcmarkets.com/fonts/neuehaasgrotdisp-55roman-webfont.eot?#iefix') format('embedded-opentype'),
+         url('https://assets.cmcmarkets.com/fonts/neuehaasgrotdisp-55roman-webfont.woff') format('woff'),
+         url('https://assets.cmcmarkets.com/fonts/neuehaasgrotdisp-55roman-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'NeueHaasGrotDisp-65Medium';
+    src: url('https://assets.cmcmarkets.com/fonts/neuehaasgrotdisp-65medium-webfont.eot');
+    src: url('https://assets.cmcmarkets.com/fonts/neuehaasgrotdisp-65medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('https://assets.cmcmarkets.com/fonts/neuehaasgrotdisp-65medium-webfont.woff') format('woff'),
+         url('https://assets.cmcmarkets.com/fonts/neuehaasgrotdisp-65medium-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'NeueHaasGrotDisp-56Italic';
+    src: url('https://assets.cmcmarkets.com/fonts/neuehaasgrotdisp-56italic-webfont.eot');
+    src: url('https://assets.cmcmarkets.com/fonts/neuehaasgrotdisp-56italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('https://assets.cmcmarkets.com/fonts/neuehaasgrotdisp-56italic-webfont.woff') format('woff'),
+         url('https://assets.cmcmarkets.com/fonts/neuehaasgrotdisp-56italic-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+.font-semibold,
+.font-bold {
+  @include fontMedium;
+}
+
+@mixin font-bold {
+    font-weight: 600;
+}

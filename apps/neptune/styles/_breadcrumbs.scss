@@ -1,0 +1,54 @@
+// TO BE REVIEWED (not used in the project)
+.breadcrumb-premium {
+    @apply main-container py-0;
+    .breadcrumb-premium-ul {
+        @apply m-0 flex flex-wrap pb-4 pl-0;
+    }
+    .breadcrumb-premium-li {
+        @apply relative mr-2 pr-3 text-xxs leading-5;
+        &:last-child {
+            &:before {
+                color: #000;
+            }
+            &:after {
+                @apply hidden;
+            }
+        }
+        &:after {
+            border-color: #000;
+            border-style: solid;
+            border-width: 0.107em 0.107em 0 0;
+            content: "";
+            height: 0.35em;
+            position: absolute;
+            right: 1px;
+            top: 8px;
+            transform: rotate(45deg);
+            vertical-align: middle;
+            width: 0.35em;
+        }
+        a,
+        span {
+            color: #000;
+        }
+    }
+}
+
+.dark {
+    .breadcrumb-premium {
+        .breadcrumb-premium-li {
+            &:last-child {
+                &:before {
+                    color: #fff;
+                }
+            }
+            &:after {
+                border-color: #fff;
+            }
+            a,
+            span {
+                color: #fff;
+            }
+        }
+    }
+}

@@ -1,0 +1,72 @@
+// TO BE REVIEWED (could probably be improved)
+.device-show {
+    @apply hidden;
+
+    &.type {
+        &-desktop {
+            &:not(.flex-show) {
+                body.desktop & {
+                    @apply block;
+                }
+            }
+            &.flex-show {
+                body.desktop & {
+                    @apply flex;
+                }
+            }
+        }
+        &-tablet {
+            &:not(.flex-show) {
+                body.tablet & {
+                    @apply block;
+                }
+            }
+            &.flex-show {
+                body.tablet & {
+                    @apply flex;
+                }
+            }
+        }
+        &-mobile {
+            &:not(.flex-show) {
+                body.mobile & {
+                    @apply block;
+                }
+            }
+            &.flex-show {
+                body.mobile & {
+                    @apply flex;
+                }
+            }
+        }
+    }
+
+    &.os {
+        &-android {
+            body.os-android & {
+                @apply block;
+            }
+        }
+        &-ios {
+            body.os-ios & {
+                @apply block;
+            }
+        }
+        &-other {
+            body.os-other & {
+                @apply block;
+            }
+        }
+
+        &-other-desktop {
+            body.os-other-desktop & {
+                @apply block;
+            }
+        }
+        &-mac {
+            body.os-mac & {
+                @apply block;
+            }
+        }
+    }
+}

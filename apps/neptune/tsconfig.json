@@ -1,0 +1,68 @@
+{
+  "extends": "tsconfig/react-library.json",
+  "include": [
+    "./*",
+    "./stories",
+    "./components",
+    "./components/**/*",
+    "./pages"
+  ],
+  "exclude": [
+    "dist",
+    "build",
+    "node_modules"
+  ],
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./*"
+      ],
+      "@components/*": [
+        "./components/*"
+      ],
+      "react": [
+        "./node_modules/@types/react"
+      ]
+    },
+    "allowJs": true,
+    "noEmit": true,
+    "incremental": true,
+    "resolveJsonModule": true,
+    "jsx": "preserve"
+  }
+  //   "compilerOptions": {
+  //     "target": "es5",
+  //     "lib": ["dom", "dom.iterable", "esnext"],
+  //     "allowJs": true,
+  //     "skipLibCheck": true,
+  //     "strict": true,
+  //     "forceConsistentCasingInFileNames": true,
+  //     "noEmit": true,
+  //     "esModuleInterop": true,
+  //     "module": "esnext",
+  //     "moduleResolution": "node",
+  //     "resolveJsonModule": true,
+  //     "isolatedModules": true,
+  //     "jsx": "preserve",
+  //     "incremental": true,
+  //     "plugins": [
+  //       {
+  //         "name": "next"
+  //       }
+  //     ],
+  //     "paths": {
+  //       "@/*": ["./*"]
+  //     }
+  //   },
+  //   "include": [
+  //     "next-env.d.ts",
+  //     ".next/types/**/*.ts",
+  //     "**/*.ts",
+  //     "**/*.tsx",
+  //     "**/*.jsx",
+  //     "**/*.js"
+  // , "components/modules/Common/PlatformTypes/PlatformType.old.tsx"  ],
+  //   "exclude": ["node_modules"]
+}

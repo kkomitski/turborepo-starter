@@ -1,1 +1,9 @@
-module.exports = require("config/eslint-preset");
+/** @type {import("eslint").Linter.Config} */
+module.exports = {
+  root: true,
+  extends: ["@webdev/eslint-config/next.js"],
+  parser: "@typescript-eslint/parser",
+  parserOptions: {
+    project: true,
+  },
+};

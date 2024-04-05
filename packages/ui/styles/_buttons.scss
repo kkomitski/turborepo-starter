@@ -1,0 +1,96 @@
+// When a new button is added to here, please add it to to btnClassMap.ts
+
+.btn {
+  @apply flex w-fit items-center self-start whitespace-nowrap rounded-full px-6 py-4 text-sm normal-case tracking-[0.16px] no-underline transition-all;
+  @include fontMedium;
+
+  &-primary {
+    @apply border border-white bg-white stroke-black text-navy-100 hover:bg-transparent hover:stroke-white hover:text-white;
+  }
+
+  &-primary-black-border {
+    @apply border border-black bg-white stroke-black text-navy-100 hover:bg-azure-20;
+  }
+
+  &-azure {
+    @apply border border-azure-100 bg-azure-100 stroke-white text-white hover:border-azure-70 hover:bg-azure-70 hover:text-white;
+  }
+
+  &-azure-light {
+    @apply border border-azure-100 bg-azure-20 stroke-navy-100 text-navy-100;
+  }
+
+  &-primary-outline {
+    @apply border border-azure-100 bg-transparent stroke-navy-100 text-navy-100 hover:border-azure-70 hover:bg-azure-20;
+  }
+
+  &-primary-outline-dark {
+    @apply border border-azure-100 bg-transparent stroke-white text-white hover:border-azure-70;
+  }
+
+  &-secondary {
+    @apply border border-white bg-transparent stroke-white text-white hover:bg-white hover:stroke-black hover:text-navy-100;
+  }
+
+  &-secondary-black {
+    @apply border border-navy-100 bg-transparent stroke-navy-100 text-navy-100 hover:bg-white;
+  }
+
+  &-invest {
+    @apply border border-invest-300 bg-invest-300 stroke-white text-navy-100 hover:bg-invest-400;
+  }
+
+  &-white {
+    @apply border border-transparent bg-white text-navy-100 hover:bg-white-95;
+  }
+
+  &-white-95 {
+    @apply border border-transparent bg-white-95 text-navy-100 hover:bg-white-90;
+  }
+
+  &-white-90 {
+    @apply border border-transparent bg-white-90 text-navy-100 hover:bg-white-85;
+  }
+
+  &-stone {
+    @apply border border-stone-400 bg-stone-400 stroke-navy-100 text-navy-100 hover:bg-stone-200 hover:stroke-navy-100;
+  }
+
+  &-lg {
+    @apply px-9 py-[21px] text-base;
+  }
+
+  &-md {
+    @apply px-6 py-4 text-sm;
+  }
+
+  &-sm {
+    @apply px-4 py-[9px] text-xs;
+
+    &-with-icon {
+      @apply gap-x-[9px];
+    }
+  }
+
+  &-with-icon {
+    @apply space-x-[14px];
+  }
+
+  &-only-icon {
+    @apply p-[18px];
+  }
+
+  &-tab {
+    @apply rounded-lg bg-white px-4 py-3 text-xs font-semibold text-navy-100 shadow hover:bg-white-85 data-[state=active]:bg-navy-100 data-[state=active]:text-white;
+  }
+
+  &-link {
+    @apply p-0 text-base font-normal hover:underline;
+    @include fontRoman;
+  }
+
+  &-text {
+    @apply p-0 text-base font-normal;
+    @include fontRoman;
+  }
+}

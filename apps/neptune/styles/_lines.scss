@@ -1,0 +1,42 @@
+.lines-container {
+  @apply main-xl-container pointer-events-none absolute top-0 left-0 right-0 mx-auto hidden h-full py-0 md:block;
+}
+.lines {
+  @apply z-10 hidden md:block;
+  .left {
+    &:before {
+      @apply absolute -left-6 top-0 h-full w-[1px] bg-white mix-blend-saturation content-[''];
+    }
+    &:after {
+      @apply absolute -left-6 top-0 h-full w-[1px] bg-white mix-blend-difference content-[''];
+    }
+  }
+
+  .right {
+    &:before {
+      @apply absolute right-20 top-0 h-full w-[1px] bg-white mix-blend-saturation content-[''];
+    }
+    &:after {
+      @apply absolute right-20 top-0 h-full w-[1px] bg-white mix-blend-difference content-[''];
+    }
+  }
+
+  // Line which allows custom positioning whilst maintaining styling
+  .line {
+    &:before {
+      @apply absolute top-0 h-full w-[1px] bg-white mix-blend-saturation content-[''];
+    }
+    &:after {
+      @apply absolute top-0 h-full w-[1px] bg-white mix-blend-difference content-[''];
+    }
+
+    &-faded {
+      &:before {
+        @apply bg-white/50;
+      }
+      &:after {
+        @apply bg-white/50;
+      }
+    }
+  }
+}
