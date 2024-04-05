@@ -1,5 +1,5 @@
 import { addHttps } from "@/helpers/contentful";
-import { documentToReactComponentsWrapper } from "@/helpers/contentful/richTextOptions";
+import { documentToReactComponentsWrapper } from "../../../helpers/contentful/richTextOptions";
 import Image from "next/image";
 import {
   useContentfulInspectorMode,
@@ -27,7 +27,7 @@ const FeatureCard = ({ content }: { content: Content }) => {
   const inspectorProps = useContentfulInspectorMode({
     entryId: content.sys.id,
   });
-  const data = useContentfulLiveUpdates(content);
+  const data = process.env.STORYBOOK ? content : useContentfulLiveUpdates(content);
 
   return (
     <div className="flex flex-col gap-y-8">

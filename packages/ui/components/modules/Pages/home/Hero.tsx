@@ -1,3 +1,4 @@
+import React from "react";
 import Image from "next/image";
 
 export default function Hero() {
@@ -30,9 +31,10 @@ export default function Hero() {
                   Calling all calculated risk-takers
                 </h1>
                 <p className="mb-10 pl-9 text-xl 2xl:mb-20">
-                  Since 1989, we&apos;ve invested over £100m into our award-winning platform technology
-                  <sup>1</sup>
-                  to provide you with an unrivaled spread betting and CFD trading experience.
+                  Since 1989, we&apos;ve invested over £100m into our
+                  award-winning platform technology<sup>1</sup>
+                  to provide you with an unrivaled spread betting and CFD
+                  trading experience.
                 </p>
                 <div className="mb-6 pl-9">
                   <a
@@ -216,7 +218,9 @@ export default function Hero() {
                   />
                 </svg>
 
-                <span className="font-semibold">%%%DID|GLOBAL-CMC-FTSE-STATUS%%%</span>
+                <span className="font-semibold">
+                  %%%DID|GLOBAL-CMC-FTSE-STATUS%%%
+                </span>
               </div>
             </div>
             <div className="grid items-center gap-y-6 pb-10 md:w-3/5 md:grid-cols-3 md:gap-x-4 md:gap-y-0 md:pb-0">
@@ -237,7 +241,9 @@ export default function Hero() {
                   />
                 </svg>
                 <div>
-                  <span className="mb-2 block text-xs uppercase">2023 Winner</span>
+                  <span className="mb-2 block text-xs uppercase">
+                    2023 Winner
+                  </span>
                   <span className="block font-semibold">No.1 Web Platform</span>
                   <span className="block text-sm">ForexBrokers.com Awards</span>
                 </div>
@@ -259,9 +265,15 @@ export default function Hero() {
                   />
                 </svg>
                 <div>
-                  <span className="mb-2 block text-xs uppercase">2022 Winner</span>
-                  <span className="block font-semibold">Best Mobile Trading Platform</span>
-                  <span className="block text-sm">ADVFN International Financial Awards</span>
+                  <span className="mb-2 block text-xs uppercase">
+                    2022 Winner
+                  </span>
+                  <span className="block font-semibold">
+                    Best Mobile Trading Platform
+                  </span>
+                  <span className="block text-sm">
+                    ADVFN International Financial Awards
+                  </span>
                 </div>
               </div>
               <div className="flex items-center gap-x-4 md:flex-col md:items-start">
@@ -281,7 +293,9 @@ export default function Hero() {
                   />
                 </svg>
                 <div>
-                  <span className="mb-2 block text-xs uppercase">2022 Winner</span>
+                  <span className="mb-2 block text-xs uppercase">
+                    2022 Winner
+                  </span>
                   <span className="block font-semibold">Best CFD Provider</span>
                   <span className="block text-sm">Online Money Awards</span>
                 </div>

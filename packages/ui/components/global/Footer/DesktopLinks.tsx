@@ -1,3 +1,4 @@
+import React from "react";
 import { FooterLinks } from "../Footer";
 import Link from "next/link";
 
@@ -17,11 +18,18 @@ const DesktopLinks = ({ footerLinks }: { footerLinks: FooterLinks }) => {
               {footerLink.pages.map((page, index) => (
                 <React.Fragment key={index}>
                   {page.linkType === "nextLink" ? (
-                    <Link data-next-link className="no-underline first:pt-4 md:first:pt-0" href={page.url}>
+                    <Link
+                      data-next-link
+                      className="no-underline first:pt-4 md:first:pt-0"
+                      href={page.url}
+                    >
                       {page.pageName}
                     </Link>
                   ) : (
-                    <a className="no-underline first:pt-4 md:first:pt-0" href={page.url}>
+                    <a
+                      className="no-underline first:pt-4 md:first:pt-0"
+                      href={page.url}
+                    >
                       {page.pageName}
                     </a>
                   )}

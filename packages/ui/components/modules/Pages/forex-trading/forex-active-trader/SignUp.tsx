@@ -1,9 +1,9 @@
 import OnboardingButton from "@/components/elements/OnboardingButton";
-import Lines from "@/components/global/Misc/Lines";
+import Lines from "../../../components/global/Misc/Lines";
 import { awsImage } from "@/helpers/constants";
 import Image from "next/image";
 import Link from "next/link";
-;
+import React from "react";
 
 const SignUp = () => {
   return (

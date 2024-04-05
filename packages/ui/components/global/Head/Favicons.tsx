@@ -1,4 +1,6 @@
 import { awsImage } from "@/helpers/constants";
+import React from "react";
+
 const Favicons = () => {
   return (
     <>

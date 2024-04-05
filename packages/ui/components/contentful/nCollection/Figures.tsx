@@ -1,14 +1,18 @@
 import { addDataAttributes, addHttps } from "@/helpers/contentful";
 import Image from "next/image";
+import React from "react";
 import ComponentDebugger from "../debug/ComponentDebugger";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { documentToReactComponentsWrapper } from "@/helpers/contentful/richTextOptions";
+import { documentToReactComponentsWrapper } from "../../../helpers/contentful/richTextOptions";
 
 const Figures = ({ content, debug }: { content: any; debug: any }) => {
   const theme = content.fields.theme;
 
   return (
-    <section {...addDataAttributes(debug)} className="relative bg-navy-100 text-white">
+    <section
+      {...addDataAttributes(debug)}
+      className="relative bg-navy-100 text-white"
+    >
       {/* DEBUGGING INFO FOR LOCAL */}
       <ComponentDebugger debug={debug} content={content} />
 

@@ -1,7 +1,5 @@
-import {
-  getComponentName,
-  resolveComponent,
-} from "@/helpers/contentful/components";
+import React from "react";
+import { getComponentName, resolveComponent } from "@/components/components";
 
 const ComponentResolver = ({
   content,
@@ -28,7 +26,7 @@ const ComponentResolver = ({
 
   if (process.env.ENV === "LOCAL" || process.env.ENV === "DEV") {
     console.debug(
-      "Component path: @/components/contentful/" +
+      "Component path: ui/components/contentful/" +
         componentFolder +
         "/" +
         componentName
@@ -38,6 +36,8 @@ const ComponentResolver = ({
   const Component = resolveComponent(componentFolder, componentName);
 
   if (Component) {
+    console.log("debug");
+    // @ts-ignore
     return <Component debug={debug} content={componentData} />;
   } else {
     return <div>Component not found.</div>;

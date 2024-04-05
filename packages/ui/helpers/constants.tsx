@@ -1,12 +1,14 @@
 import { AWSImages } from "./types/aws";
 
-export const getApiKey = () => "f9a22832202e456b3dd66d9432a97ab4e98bea1eaodutjiq63";
+export const getApiKey = () =>
+  "f9a22832202e456b3dd66d9432a97ab4e98bea1eaodutjiq63";
 export const getApiDomain = () => "ws.cmcmarkets.com";
 export const getAssetsUrl = () => "https://assets.cmcmarkets.com";
 export const getHtmlLang = () => "en-gb";
 export const getLanguage = () => "en";
 export const getRegion = () => "gb";
-export const awsImage = (filename: AWSImages) => `https://cdn.cmcmarkets.com/neptune/images/${filename}`;
+export const awsImage = (filename: AWSImages) =>
+  `https://cdn.cmcmarkets.com/neptune/images/${filename}`;
 
 const constants = {
   DIDS: {
@@ -30,8 +32,9 @@ const constants = {
     GLOBAL_US_30_MIN_SPREAD: "2.2",
     FSCS_FOOTNOTE: (
       <>
-        FSCS is an independent body that offers protection to customers of financial services firms that have
-        failed. The compensation amount may be up to £85,000 per eligible person, per firm.{" "}
+        FSCS is an independent body that offers protection to customers of
+        financial services firms that have failed. The compensation amount may
+        be up to £85,000 per eligible person, per firm.{" "}
         <a target="_blank" href="https://www.fscs.org.uk/">
           Eligibility conditions apply
         </a>
@@ -40,22 +43,26 @@ const constants = {
     ),
     UK_AWARDS_ALL_FOOTNOTE: (
       <>
-        Awarded No.1 Web Platform and No.1 Most Currency Pairs, ForexBrokers.com Awards 2023; Best In-House
-        Analysts, Professional Trader Awards 2023; No.1 Platform Technology, ForexBrokers.com Awards 2022;
-        Best CFD Provider, Online Money Awards 2022; Best Mobile Trading Platform, ADVFN International
-        Financial Awards 2022; Best Spread Betting Provider, City of London Wealth Management Awards 2021.
+        Awarded No.1 Web Platform and No.1 Most Currency Pairs, ForexBrokers.com
+        Awards 2023; Best Forex Broker, Good Money Guide Awards 2023; Best
+        In-House Analysts, Professional Trader Awards 2023; CFD Provider of the
+        Year, Investors' Chronicle/Financial Times Celebration of Investment
+        Awards 2023; Best CFD Provider, Online Money Awards 2022; No.1 Platform
+        Technology, ForexBrokers.com Awards 2022; Best Mobile Trading Platform,
+        ADVFN International Financial Awards 2022.
       </>
     ),
     UK_PLATFORM_AWARDS_FOOTNOTE: (
       <>
-        No.1 Web Platform, ForexBrokers.com Awards 2023; No.1 Platform Technology, ForexBrokers.com Awards
-        2022; Best Mobile Trading Platform, ADVFN International Financial Awards 2022.
+        No.1 Web Platform, ForexBrokers.com Awards 2023; No.1 Platform
+        Technology, ForexBrokers.com Awards 2022; Best Mobile Trading Platform,
+        ADVFN International Financial Awards 2022.
       </>
     ),
     GLOBAL_TOTAL_TRADERS_INVESTORS_FOOTNOTE: (
       <>
-        1.388 million unique user logins for the CMC Markets invest and CFD platforms globally, as at August
-        2023.
+        1.388 million unique user logins for the CMC Markets invest and CFD
+        platforms globally, as at August 2023.
       </>
     ),
   },
@@ -64,7 +71,8 @@ const constants = {
   },
   appLinks: {
     baseLink: "https://cmcmarkets.onelink.me/3oZk/",
-    fallbackLink: "https://www.cmcmarkets.com/en-gb/trading-platforms/mobile-trading-app",
+    fallbackLink:
+      "https://www.cmcmarkets.com/en-gb/trading-platforms/mobile-trading-app",
   },
   endpoints: {
     instruments: {

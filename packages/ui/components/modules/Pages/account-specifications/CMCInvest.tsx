@@ -1,7 +1,9 @@
-import ListItemTick from "@/components/elements/ListItemTick";
-import Lines from "@/components/global/Misc/Lines";
-import ExternalLinkSVG from "@/components/svg/ExternalLinkSVG";
+import ListItemTick from "ui/components/elements/ListItemTick";
+import Lines from "ui/components/global/Misc/Lines";
+import ExternalLinkSVG from "ui/components/svg/ExternalLinkSVG";
 import Link from "next/link";
+import React from "react";
+
 type Props = {};
 
 const CMCInvest = (props: Props) => {
@@ -13,7 +15,9 @@ const CMCInvest = (props: Props) => {
           <div className="lg:w-5/12">
             <div className="-ml-6 lg:-mr-6">
               <div className="mb-6 border-l-8 border-l-invest-300 pl-6">
-                <small className="mb-6 block uppercase">Your Investing journey starts here</small>
+                <small className="mb-6 block uppercase">
+                  Your Investing journey starts here
+                </small>
                 <svg
                   className="mb-4"
                   width="201"
@@ -59,15 +63,18 @@ const CMCInvest = (props: Props) => {
                   </defs>
                 </svg>
 
-                <p className="text-2xl">Take the next step in investing long term</p>
+                <p className="text-2xl">
+                  Take the next step in investing long term
+                </p>
               </div>
               <div className="pl-9">
                 <p>
-                  Join today and start investing in over 1,300 US and UK shares, and 300+ ETFs and Investment
-                  Trusts, with real-time pricing and 0% commission. Upgrade to our Plus plan and discover more
-                  benefits like our flexible stocks & shares ISA and USD wallet. {""}
+                  Join today and start investing in over 1,300 US and UK shares,
+                  and 300+ ETFs and Investment Trusts, with real-time pricing
+                  and 0% commission. Upgrade to our Plus plan and discover more
+                  benefits like our flexible stocks & shares ISA and USD wallet.{" "}
+                  {""}
                   <a
-                    rel="noopener"
                     target="_blank"
                     href="https://www.cmcinvest.com/en-gb/terms-and-conditions"
                   >
@@ -91,14 +98,17 @@ const CMCInvest = (props: Props) => {
               <div className="mb-6 border-l-8 border-l-navy-100 pl-6">
                 <p className="mb-3 text-[32px]">Corporate account</p>
                 <p className="text-2xl">
-                  Our corporate account offers access to a CFD trading account for your business.
+                  Our corporate account offers access to a CFD trading account
+                  for your business.
                 </p>
               </div>
               <div className="pl-9 text-xl">
                 <ul className="mb-8">
                   <ListItemTick>12,000 instruments</ListItemTick>
                   <ListItemTick>Trade with leverage</ListItemTick>
-                  <ListItemTick>CMC web platform, iOS and Android app</ListItemTick>
+                  <ListItemTick>
+                    CMC web platform, iOS and Android app
+                  </ListItemTick>
                   <ListItemTick>MT4 platform available</ListItemTick>
                   <ListItemTick>24/5 customer support</ListItemTick>
                 </ul>

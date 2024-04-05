@@ -1,3 +1,4 @@
+import React from "react";
 import PropTypes from "prop-types";
 import constants, { getHtmlLang } from "@/helpers/constants";
 import { dateConverter } from "@/helpers/utils";
@@ -31,7 +32,9 @@ const NewsListing = ({ article }: { article: Article }) => {
   };
 
   const articleAuthor = (article: Article) => {
-    return `${article.User.name.split(" ")[0].slice(0, 1)}. ${article.User.name.split(" ")[1]}`;
+    return `${article.User.name.split(" ")[0].slice(0, 1)}. ${
+      article.User.name.split(" ")[1]
+    }`;
   };
 
   const articleLink = (article: Article) => {

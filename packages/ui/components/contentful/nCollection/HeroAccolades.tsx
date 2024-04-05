@@ -1,7 +1,7 @@
-import Lines from "@/components/global/Misc/Lines";
+import Lines from "../../../components/global/Misc/Lines";
 import { awsImage } from "@/helpers/constants";
 import { addDataAttributes, addHttps } from "@/helpers/contentful";
-import { documentToReactComponentsWrapper } from "@/helpers/contentful/richTextOptions";
+import { documentToReactComponentsWrapper } from "../../../helpers/contentful/richTextOptions";
 import Image from "next/image";
 import ComponentDebugger from "../debug/ComponentDebugger";
 import {
@@ -11,8 +11,10 @@ import {
 
 const HeroAccolades = ({ content, debug }: { content: any; debug: any }) => {
   const inspectorProps = useContentfulInspectorMode();
-  const data = useContentfulLiveUpdates(content);
+  const data = process.env.STORYBOOK ? content : useContentfulLiveUpdates(content);
   const lines = data.fields.border;
+
+  console.log(content)
 
   return (
     <>

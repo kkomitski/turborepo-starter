@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/select";
 import InstrumentsTable from "@/components/tables/InstrumentTable/InstrumentsTable";
 import { InstrumentTableMapping } from "@/components/tables/InstrumentTable/InstrumentTableTypes";
-import Lines from "@/components/global/Misc/Lines";
+import Lines from "../../../components/global/Misc/Lines";
 import constants from "@/helpers/constants";
 
 type Props = {};

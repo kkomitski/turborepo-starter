@@ -1,16 +1,28 @@
-import Lines from "@/components/global/Misc/Lines";
+import Lines from "../../../components/global/Misc/Lines";
 import { addDataAttributes, addHttps } from "@/helpers/contentful";
+import React from "react";
 import ComponentDebugger from "../debug/ComponentDebugger";
-import { documentToReactComponentsWrapper } from "@/helpers/contentful/richTextOptions";
-import InstrumentCardDeck, { InstrumentData } from "../modules/common/InstrumentCards/InstrumentCardDeck";
+import { documentToReactComponentsWrapper } from "../../../helpers/contentful/richTextOptions";
+import InstrumentCardDeck, {
+  InstrumentData,
+} from "../modules/common/InstrumentCards/InstrumentCardDeck";
 import Image from "next/image";
-import { useContentfulInspectorMode, useContentfulLiveUpdates } from "@contentful/live-preview/react";
+import {
+  useContentfulInspectorMode,
+  useContentfulLiveUpdates,
+} from "@contentful/live-preview/react";
 
-const InstrumentCardsSection = ({ content, debug }: { content: any; debug: any }) => {
+const InstrumentCardsSection = ({
+  content,
+  debug,
+}: {
+  content: any;
+  debug: any;
+}) => {
   const inspectorProps = useContentfulInspectorMode({
     entryId: content.sys.id,
   });
-  const data = useContentfulLiveUpdates(content);
+  const data = process.env.STORYBOOK ? content : useContentfulLiveUpdates(content);
 
   // If the content is undefined, return an empty fragment.
   if (typeof content === "undefined") {
@@ -34,15 +46,25 @@ const InstrumentCardsSection = ({ content, debug }: { content: any; debug: any }
       {/* DEBUGGING INFO FOR LOCAL */}
       <ComponentDebugger content={content} debug={debug} />
 
-      {lines !== undefined && <Lines left={lines.includes("Left")} right={lines.includes("Right")} />}
+      {lines !== undefined && (
+        <Lines left={lines.includes("Left")} right={lines.includes("Right")} />
+      )}
 
       {/* Side Background Image */}
       {data.fields.backgroundImage && (
         <Image
           className="absolute right-0 top-0 hidden h-full w-[180px] object-cover lg:block"
-          src={addHttps(data.fields.backgroundImage.fields.asset.fields.file.url)}
-          width={data.fields.backgroundImage.fields.asset.fields.file.details.image.width}
-          height={data.fields.backgroundImage.fields.asset.fields.file.details.image.height}
+          src={addHttps(
+            data.fields.backgroundImage.fields.asset.fields.file.url
+          )}
+          width={
+            data.fields.backgroundImage.fields.asset.fields.file.details.image
+              .width
+          }
+          height={
+            data.fields.backgroundImage.fields.asset.fields.file.details.image
+              .height
+          }
           alt=""
           {...inspectorProps({
             fieldId: "backgroundImage",

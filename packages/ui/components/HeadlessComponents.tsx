@@ -28,8 +28,7 @@ export class HeadlessComponents {
             return <div key={index}>Linked item was removed.</div>;
           }
 
-          return (
-            <div key={index}>
+          return  (
               <ComponentResolver
                 debug={{
                   contentfulContentTypeId: item.sys.contentType.sys.id,
@@ -38,7 +37,6 @@ export class HeadlessComponents {
                 key={index}
                 content={item}
               />
-            </div>
           );
         })}
       </>

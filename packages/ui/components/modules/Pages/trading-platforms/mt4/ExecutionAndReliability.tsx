@@ -1,13 +1,13 @@
 import OnboardingButton from "@/components/elements/OnboardingButton";
-import Lines from "@/components/global/Misc/Lines";
-import IOSIconSVG from "@/components/svg/IOSIconSVG";
+import Lines from "../../../components/global/Misc/Lines";
+import IOSIconSVG from "../../../components/svg/IOSIconSVG";
 import MacOSIconSVG from "@/components/svg/MacOSIconSVG";
-import PlayStoreSVG from "@/components/svg/PlayStoreSVG";
+import PlayStoreSVG from "../../../components/svg/PlayStoreSVG";
 import WindowsIconSVG from "@/components/svg/WindowsIconSVG";
 import usePlatformDetector, {
   OperatingSystem,
 } from "@/hooks/usePlatformDetector";
-;
+import React from "react";
 
 const ExecutionAndReliability = () => {
   const operatingSystem: OperatingSystem = usePlatformDetector();

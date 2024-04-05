@@ -1,3 +1,5 @@
+import React from "react";
+
 type Props = {
   left?: boolean;
   right?: boolean;

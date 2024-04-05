@@ -16,15 +16,10 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./*"
-      ],
-      "@components/*": [
-        "./components/*"
-      ],
-      "react": [
-        "./node_modules/@types/react"
-      ]
+      "@/*": ["../neptune/*"]
+      // "@components/*": ["./components/*"],
+      // "@/helpers/*": ["./helpers/*"],
+      // "react": ["node_modules/@types/react"]
     },
     "allowJs": true,
     "noEmit": true,

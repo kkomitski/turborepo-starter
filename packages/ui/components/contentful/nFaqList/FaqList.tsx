@@ -1,11 +1,20 @@
+import React from "react";
 import ComponentDebugger from "../debug/ComponentDebugger";
-import Lines from "@/components/global/Misc/Lines";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { documentToReactComponentsWrapper } from "@/helpers/contentful/richTextOptions";
-import { useContentfulInspectorMode, useContentfulLiveUpdates } from "@contentful/live-preview/react";
+import Lines from "../../../components/global/Misc/Lines";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../../../components/ui/accordion";
+import { documentToReactComponentsWrapper } from "../../../helpers/contentful/richTextOptions";
+import {
+  useContentfulInspectorMode,
+  useContentfulLiveUpdates,
+} from "@contentful/live-preview/react";
 
 const FaqList = ({ content, debug }: { content: any; debug: any }) => {
-  const data = useContentfulLiveUpdates(content);
+  const data = process.env.STORYBOOK ? content : useContentfulLiveUpdates(content);
 
   const inspectorProps = useContentfulInspectorMode();
 
@@ -43,30 +52,39 @@ const FaqList = ({ content, debug }: { content: any; debug: any }) => {
               </p>
 
               <Accordion type="multiple" className="w-full space-y-2">
-                {faqCategory.fields.faqItems.map((faqItem: any, index: number) => (
-                  <AccordionItem className="rounded-lg bg-white shadow" key={index} value={`item-${index}`}>
-                    <AccordionTrigger
-                      className="relative cursor-pointer px-4 py-3 pr-3.5 text-base font-semibold hover:no-underline"
-                      {...inspectorProps({
-                        entryId: faqItem.sys.id,
-                        fieldId: "question",
-                      })}
+                {faqCategory.fields.faqItems.map(
+                  (faqItem: any, index: number) => (
+                    <AccordionItem
+                      className="rounded-lg bg-white shadow"
+                      key={index}
+                      value={`item-${index}`}
                     >
-                      {faqItem.fields.question}
-                    </AccordionTrigger>
-                    <AccordionContent
-                      className="px-4 pt-4 text-base"
-                      {...inspectorProps({
-                        entryId: faqItem.sys.id,
-                        fieldId: "answer",
-                      })}
-                    >
-                      {documentToReactComponentsWrapper(faqItem.fields.answer, {
-                        type: "content",
-                      })}
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
+                      <AccordionTrigger
+                        className="relative cursor-pointer px-4 py-3 pr-3.5 text-base font-semibold hover:no-underline"
+                        {...inspectorProps({
+                          entryId: faqItem.sys.id,
+                          fieldId: "question",
+                        })}
+                      >
+                        {faqItem.fields.question}
+                      </AccordionTrigger>
+                      <AccordionContent
+                        className="px-4 pt-4 text-base"
+                        {...inspectorProps({
+                          entryId: faqItem.sys.id,
+                          fieldId: "answer",
+                        })}
+                      >
+                        {documentToReactComponentsWrapper(
+                          faqItem.fields.answer,
+                          {
+                            type: "content",
+                          }
+                        )}
+                      </AccordionContent>
+                    </AccordionItem>
+                  )
+                )}
               </Accordion>
             </div>
           ))}

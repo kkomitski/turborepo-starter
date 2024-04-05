@@ -1,11 +1,8 @@
+import React from "react";
+
 const MobileOpenBtn = (props: any) => {
   return (
-    <button
-      onClick={props.onClick}
-      className={"ml-2 lg:hidden " + (props.isVisible ? "block" : "hidden")}
-      id="mobileMegamenuBtnOpen"
-      type="button"
-    >
+    <button onClick={props.onClick} className={"ml-2 lg:hidden " + (props.isVisible ? "block" : "hidden")} id="mobileMegamenuBtnOpen" type="button">
       <svg
         id="mobileMegamenuBtnOpen"
         width="32"

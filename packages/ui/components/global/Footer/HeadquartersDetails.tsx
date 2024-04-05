@@ -1,5 +1,7 @@
 import { awsImage } from "@/helpers/constants";
 import Image from "next/image";
+import React from "react";
+
 const HeadquartersDetails = () => {
   return (
     <div className="border-t border-t-navy-70 pb-14 pt-4 md:col-span-7 md:pb-0">
@@ -33,7 +35,9 @@ const HeadquartersDetails = () => {
             src={awsImage("flag_AU.png")}
             alt=""
           />
-          <span>Level 20, Tower 3, International Towers 300 Barangaroo Avenue</span>
+          <span>
+            Level 20, Tower 3, International Towers 300 Barangaroo Avenue
+          </span>
         </div>
       </div>
     </div>

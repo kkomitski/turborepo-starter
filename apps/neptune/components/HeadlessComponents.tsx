@@ -29,16 +29,15 @@ export class HeadlessComponents {
           }
 
           return (
-            <div key={index}>
-              <ComponentResolver
-                debug={{
-                  contentfulContentTypeId: item.sys.contentType.sys.id,
-                  contentfulId: item.sys.id,
-                }}
-                key={index}
-                content={item}
-              />
-            </div>
+            // @ts-ignore
+            <ComponentResolver
+              debug={{
+                contentfulContentTypeId: item.sys.contentType.sys.id,
+                contentfulId: item.sys.id,
+              }}
+              key={index}
+              content={item}
+            />
           );
         })}
       </>

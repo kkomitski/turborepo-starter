@@ -9,9 +9,9 @@ import ReadyToGetStarted from "@/components/modules/Common/ReadyToGetStarted";
 import TrustpilotSliderB from "@/components/modules/Common/TrustpilotSliderB";
 import PlatformSlider from "@/components/modules/Pages/home/PlatformSlider";
 import VideoCarousel from "@/components/modules/Pages/home/VideoCarousel";
-import RightArrowSVG from "@/components/svg/RightArrowSVG";
-import { InstrumentTableMapping } from "@/components/tables/InstrumentTable/InstrumentTableTypes";
-import InstrumentsTable from "@/components/tables/InstrumentTable/InstrumentsTable";
+import RightArrowSVG from "@/components/_unused/svg/RightArrowSVG";
+import { InstrumentTableMapping } from "@/components/_unused/tables/InstrumentTable/InstrumentTableTypes";
+import InstrumentsTable from "@/components/_unused/tables/InstrumentTable/InstrumentsTable";
 import Head from "next/head";
 import Link from "next/link";
 import AlphaHero from "@/components/modules/Pages/home/AlphaHero";
@@ -274,14 +274,7 @@ export default function Home() {
       {/* Footnotes */}
       <Footnotes
         footnotesList={[
-          <>
-            Awarded No.1 Web Platform, No.1 Most Currency Pairs, &amp; No.1
-            Podcast Series, ForexBrokers.com Awards 2023; No.1 Platform
-            Technology, ForexBrokers.com Awards 2022; Best CFD Provider, Online
-            Money Awards 2022; Best Mobile Trading Platform, ADVFN International
-            Financial Awards 2022; Best In-House Analysts, Professional Trader
-            Awards 2022.
-          </>,
+          <>{constants.DIDS.UK_AWARDS_ALL_FOOTNOTE}</>,
           <>
             FSCS is an independent body that offers protection to customers of
             financial services firms that have failed. The compensation amount

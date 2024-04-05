@@ -1,4 +1,4 @@
-import TrustpilotWidgetMicro from "@/components/widgets/TrustpilotWidgetMicro";
+import TrustpilotWidgetMicro from "../../../components/widgets/TrustpilotWidgetMicro";
 import { awsImage } from "@/helpers/constants";
 import React, { ForwardedRef, ReactNode, forwardRef } from "react";
 

@@ -1,5 +1,5 @@
-import EmailIconSVG from "@/components/svg/EmailIconSVG";
-import PhoneIconSVG from "@/components/svg/PhoneIconSVG";
+import EmailIconSVG from "ui/components/svg/EmailIconSVG";
+import PhoneIconSVG from "ui/components/svg/PhoneIconSVG";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { MARKS, INLINES, BLOCKS } from "@contentful/rich-text-types";
 import cloneDeep from "lodash/cloneDeep";
@@ -175,8 +175,6 @@ const renderEmbeddedCardContent = (nodeData: any) => {
 const renderEmbeddedInlineTextContent = (nodeData: any) => {
   const textType = nodeData.fields.type;
   const contentValue = nodeData.fields.text.content[0].content[0].value;
-
-  console.log(contentValue);
 
   switch (textType) {
     case "Email":

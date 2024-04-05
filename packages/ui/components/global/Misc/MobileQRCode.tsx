@@ -1,6 +1,8 @@
 "use client";
 
 import constants from "@/helpers/constants";
+import React from "react";
+
 const MobileAppQRCode = () => {
   return (
     <div>
@@ -11,7 +13,11 @@ const MobileAppQRCode = () => {
         id="qr-code"
         suppressHydrationWarning={true}
       >
-        <canvas width={245} height={245} suppressHydrationWarning={true}></canvas>
+        <canvas
+          width={245}
+          height={245}
+          suppressHydrationWarning={true}
+        ></canvas>
       </a>
     </div>
   );

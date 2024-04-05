@@ -1,7 +1,8 @@
 import RightArrowSVG from "@/components/svg/RightArrowSVG";
-import TrustpilotWidgetMicro from "@/components/widgets/TrustpilotWidgetMicro";
+import TrustpilotWidgetMicro from "../../../components/widgets/TrustpilotWidgetMicro";
 import Image from "next/image";
 import Link from "next/link";
+import React from "react";
 import HeroAccoladesSectionA from "../../Common/Hero/Common/HeroAccoladesSectionA";
 import AlphaLogoSVG from "@/components/svg/AlphaLogoSVG";
 import { awsImage, getHtmlLang } from "@/helpers/constants";
@@ -57,8 +58,9 @@ const AlphaHero = () => {
                       Calling all calculated risk-takers
                     </h1>
                     <p className="mb-16 pl-3 md:mb-10 md:pl-9 xl:pr-8">
-                      Spread bet and trade CFDs across 12,000 instruments on our award-winning platform
-                      <sup>1</sup>, with tight spreads, no hidden fees, and 24/5 support.
+                      Spread bet and trade CFDs across 12,000 instruments on our
+                      award-winning platform<sup>1</sup>, with tight spreads, no
+                      hidden fees, and 24/5 support.
                     </p>
 
                     <div className="ml-3 flex flex-col gap-y-4 md:hidden">

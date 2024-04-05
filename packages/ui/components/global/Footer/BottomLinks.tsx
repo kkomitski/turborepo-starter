@@ -1,5 +1,7 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
 import Link from "next/link";
+import React from "react";
+
 const BottomLinks = () => {
   return (
     <div className="flex flex-col justify-between py-4 text-xs md:flex-row">
@@ -25,14 +27,20 @@ const BottomLinks = () => {
         <a className="no-underline" href="/en-gb/public-relations">
           Public relations
         </a>
-        <a className="no-underline" href="https://www.cmcmarkets.com/group/careers" target="_blank">
+        <a
+          className="no-underline"
+          href="https://www.cmcmarkets.com/group/careers"
+          target="_blank"
+        >
           Careers
         </a>
         <a className="no-underline" href="/en-gb/contact-us">
           Contact us
         </a>
       </div>
-      <div className="pt-4 md:pt-0">© {new Date().getFullYear()} CMC Markets</div>
+      <div className="pt-4 md:pt-0">
+        © {new Date().getFullYear()} CMC Markets
+      </div>
     </div>
   );
 };

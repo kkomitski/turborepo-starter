@@ -1,3 +1,4 @@
+import React from "react";
 import AppleStoreSVG from "../svg/AppStoreSVG";
 import PlayStoreSVG from "../svg/PlayStoreSVG";
 import constants from "@/helpers/constants";
@@ -33,7 +34,11 @@ const MobileQRCodeButton = () => {
         </a>
       </div>
       <div className="device-show os-other">
-        <button onClick={openQRCode} type="button" className="qr-code-btn btn btn-azure btn-with-icon">
+        <button
+          onClick={openQRCode}
+          type="button"
+          className="qr-code-btn btn btn-azure btn-with-icon"
+        >
           <QRCodeSVG />
 
           <span>Scan to download the app</span>

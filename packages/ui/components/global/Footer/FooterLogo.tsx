@@ -1,3 +1,5 @@
+import React from "react";
+
 const FooterLogo = () => {
   return (
     <div className="mb-12 flex gap-x-4">

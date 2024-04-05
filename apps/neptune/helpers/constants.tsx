@@ -44,11 +44,12 @@ const constants = {
     UK_AWARDS_ALL_FOOTNOTE: (
       <>
         Awarded No.1 Web Platform and No.1 Most Currency Pairs, ForexBrokers.com
-        Awards 2023; Best In-House Analysts, Professional Trader Awards 2023;
-        No.1 Platform Technology, ForexBrokers.com Awards 2022; Best CFD
-        Provider, Online Money Awards 2022; Best Mobile Trading Platform, ADVFN
-        International Financial Awards 2022; Best Spread Betting Provider, City
-        of London Wealth Management Awards 2021.
+        Awards 2023; Best Forex Broker, Good Money Guide Awards 2023; Best
+        In-House Analysts, Professional Trader Awards 2023; CFD Provider of the
+        Year, Investors' Chronicle/Financial Times Celebration of Investment
+        Awards 2023; Best CFD Provider, Online Money Awards 2022; No.1 Platform
+        Technology, ForexBrokers.com Awards 2022; Best Mobile Trading Platform,
+        ADVFN International Financial Awards 2022.
       </>
     ),
     UK_PLATFORM_AWARDS_FOOTNOTE: (

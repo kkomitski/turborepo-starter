@@ -2,10 +2,10 @@ import { addHttps } from "@/helpers/contentful";
 import Image from "next/image";
 import { useState } from "react";
 
-import MobileAppQRCode from "@/components/global/Misc/MobileQRCode";
-import GoBackArrowSVG from "@/components/svg/GoBackArrowSVG";
-import { renderComponents } from "@/helpers/contentful/components";
-import { documentToReactComponentsWrapper } from "@/helpers/contentful/richTextOptions";
+import MobileAppQRCode from "../../../components/global/Misc/MobileQRCode";
+import GoBackArrowSVG from "../../../components/svg/GoBackArrowSVG";
+import { renderComponents } from "../../../helpers/contentful/components";
+import { documentToReactComponentsWrapper } from "../../../helpers/contentful/richTextOptions";
 import { usePlatformMobileTradingStore } from "@/store/mobileTradingStore";
 import {
   useContentfulInspectorMode,
@@ -42,7 +42,7 @@ const PlatformType = ({ content }: { content: Content }) => {
   const inspectorProps = useContentfulInspectorMode({
     entryId: content.sys.id,
   });
-  const data = useContentfulLiveUpdates(content);
+  const data = process.env.STORYBOOK ? content : useContentfulLiveUpdates(content);
 
   return (
     // QR Code Flip over Card

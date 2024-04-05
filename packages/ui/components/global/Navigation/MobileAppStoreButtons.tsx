@@ -1,6 +1,8 @@
-import IOSIconSVG from "@/components/svg/IOSIconSVG";
-import PlayStoreSVG from "@/components/svg/PlayStoreSVG";
+import IOSIconSVG from "../../../components/svg/IOSIconSVG";
+import PlayStoreSVG from "../../../components/svg/PlayStoreSVG";
 import constants from "@/helpers/constants";
+import React from "react";
+
 const MobileAppStoreButtons = () => {
   return (
     <div className="flex justify-center gap-x-2 pb-24 pt-12 lg:hidden">
@@ -14,7 +16,8 @@ const MobileAppStoreButtons = () => {
           <IOSIconSVG width={32} height={32} className="fill-white" />
 
           <span>
-            <span>Download on the</span> <span className="font-semibold">App store</span>
+            <span>Download on the</span>{" "}
+            <span className="font-semibold">App store</span>
           </span>
         </a>
       </div>
@@ -25,9 +28,14 @@ const MobileAppStoreButtons = () => {
           suppressHydrationWarning={true}
           data-fallback-href={constants.appLinks.fallbackLink}
         >
-          <PlayStoreSVG className="fill-white stroke-black" width={25} height={24} />
+          <PlayStoreSVG
+            className="fill-white stroke-black"
+            width={25}
+            height={24}
+          />
           <span>
-            <span>Download on the</span> <span className="font-semibold">Play store</span>
+            <span>Download on the</span>{" "}
+            <span className="font-semibold">Play store</span>
           </span>
         </a>
       </div>
@@ -57,7 +65,8 @@ const MobileAppStoreButtons = () => {
           </svg>
 
           <span>
-            <span>Open a web</span> <span className="font-semibold">Demo Account</span>
+            <span>Open a web</span>{" "}
+            <span className="font-semibold">Demo Account</span>
           </span>
         </a>
       </div>

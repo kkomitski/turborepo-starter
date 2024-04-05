@@ -1,8 +1,12 @@
-import { addHttps, getThemeType } from "@/helpers/contentful";
+import { addDataAttributes, addHttps, getThemeType } from "@/helpers/contentful";
 import Image from "next/image";
-import { documentToReactComponentsWrapper } from "@/helpers/contentful/richTextOptions";
+import React from "react";
+import { documentToReactComponentsWrapper } from "../../../helpers/contentful/richTextOptions";
 import { ComponentStylingOptions } from "@/helpers/contentful/components";
-import { useContentfulInspectorMode, useContentfulLiveUpdates } from "@contentful/live-preview/react";
+import {
+  useContentfulInspectorMode,
+  useContentfulLiveUpdates,
+} from "@contentful/live-preview/react";
 
 type Content = {
   fields: {
@@ -24,11 +28,13 @@ type Content = {
 const SummaryCard = ({
   content,
   stylingOptions,
+  debug
 }: {
   content: Content;
   stylingOptions: ComponentStylingOptions;
+  debug: any
 }) => {
-  const data = useContentfulLiveUpdates(content);
+  const data = process.env.STORYBOOK ? content : useContentfulLiveUpdates(content);
   const inspectorProps = useContentfulInspectorMode({
     entryId: content.sys.id,
   });
@@ -39,8 +45,12 @@ const SummaryCard = ({
 
   const bgColor = themeType === "Light" ? "bg-white-95" : "bg-navy-70";
   const textColor = themeType === "Light" ? "text-navy-100" : "text-white";
+  
   return (
-    <div className={`flex h-auto flex-col rounded-lg p-4 shadow-lg ${bgColor} ${textColor} ${columnWidth}`}>
+    <div
+      className={`flex h-auto flex-col rounded-lg p-4 shadow-lg ${bgColor} ${textColor} ${columnWidth}`}
+      {...addDataAttributes(debug)}
+    >
       <Image
         src={addHttps(data.fields.image.fields.file.url)}
         alt={typeof data.fields.header === "string" ? data.fields.header : ""}

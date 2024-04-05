@@ -1,7 +1,15 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import React from "react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import OneColumn from "../../Common/Basic/OneColumn";
-import SimpleTable, { SimpleTableColumn } from "@/components/tables/SimpleTable/SimpleTable";
+import SimpleTable, {
+  SimpleTableColumn,
+} from "@/components/tables/SimpleTable/SimpleTable";
 import Link from "next/link";
 import { getHtmlLang } from "@/helpers/constants";
 
@@ -29,8 +37,15 @@ const AccountComparisonTable = () => {
   ];
   return (
     <OneColumn containerClassName="pt-0 lg:pt-1 pb-8 lg:pb-12">
-      <Accordion className="w-full space-y-2" type="multiple" defaultValue={["instruments-available"]}>
-        <AccordionItem className="rounded-lg bg-white px-4 shadow" value="instruments-available">
+      <Accordion
+        className="w-full space-y-2"
+        type="multiple"
+        defaultValue={["instruments-available"]}
+      >
+        <AccordionItem
+          className="rounded-lg bg-white px-4 shadow"
+          value="instruments-available"
+        >
           <AccordionTrigger>
             {" "}
             <h3 className="font-semibold">Instruments available</h3>
@@ -43,7 +58,8 @@ const AccountComparisonTable = () => {
                   {
                     content: (
                       <a href={`/${getHtmlLang()}/instruments`}>
-                        Total number <span className="block lg:inline">of instruments</span>
+                        Total number{" "}
+                        <span className="block lg:inline">of instruments</span>
                       </a>
                     ),
                   },
@@ -96,7 +112,9 @@ const AccountComparisonTable = () => {
                 ],
                 [
                   {
-                    content: <Link href="/markets-commodity-trading">Commodities</Link>,
+                    content: (
+                      <Link href="/markets-commodity-trading">Commodities</Link>
+                    ),
                   },
                   {
                     content: "100+",
@@ -149,7 +167,10 @@ const AccountComparisonTable = () => {
                   {
                     content: (
                       <>
-                        Maximum leverage <span className="block md:inline">(retail clients)</span>
+                        Maximum leverage{" "}
+                        <span className="block md:inline">
+                          (retail clients)
+                        </span>
                       </>
                     ),
                   },
@@ -198,7 +219,10 @@ const AccountComparisonTable = () => {
             />
           </AccordionContent>
         </AccordionItem>
-        <AccordionItem className="rounded-lg bg-white px-4 shadow" value="costs">
+        <AccordionItem
+          className="rounded-lg bg-white px-4 shadow"
+          value="costs"
+        >
           <AccordionTrigger>
             {" "}
             <h3 className="font-semibold">Costs</h3>
@@ -243,17 +267,30 @@ const AccountComparisonTable = () => {
                     content: "NO",
                   },
                   {
-                    content: <>YES (SHARES ONLY) - US shares from $10; UK shares from £9</>,
+                    content: (
+                      <>
+                        YES (SHARES ONLY) - US shares from $10; UK shares from
+                        £9
+                      </>
+                    ),
                   },
                   {
-                    content: <>YES (SHARES ONLY) - US shares from $10; UK shares from £9</>,
+                    content: (
+                      <>
+                        YES (SHARES ONLY) - US shares from $10; UK shares from
+                        £9
+                      </>
+                    ),
                   },
                 ],
                 [
                   {
                     content: (
                       <>
-                        Holding costs <span className="block md:inline">if held overnight</span>
+                        Holding costs{" "}
+                        <span className="block md:inline">
+                          if held overnight
+                        </span>
                       </>
                     ),
                   },
@@ -302,21 +339,24 @@ const AccountComparisonTable = () => {
                   {
                     content: (
                       <>
-                        £10 monthly, if no trading activity for one year. No fee on accounts with zero funds.
+                        £10 monthly, if no trading activity for one year. No fee
+                        on accounts with zero funds.
                       </>
                     ),
                   },
                   {
                     content: (
                       <>
-                        £10 monthly, if no trading activity for one year. No fee on accounts with zero funds.
+                        £10 monthly, if no trading activity for one year. No fee
+                        on accounts with zero funds.
                       </>
                     ),
                   },
                   {
                     content: (
                       <>
-                        £10 monthly, if no trading activity for one year. No fee on accounts with zero funds.
+                        £10 monthly, if no trading activity for one year. No fee
+                        on accounts with zero funds.
                       </>
                     ),
                   },
@@ -325,7 +365,10 @@ const AccountComparisonTable = () => {
             />
           </AccordionContent>
         </AccordionItem>
-        <AccordionItem className="rounded-lg bg-white px-4 shadow" value="additional-key-features">
+        <AccordionItem
+          className="rounded-lg bg-white px-4 shadow"
+          value="additional-key-features"
+        >
           <AccordionTrigger>
             {" "}
             <h3 className="font-semibold">Additional key features</h3>
@@ -353,7 +396,9 @@ const AccountComparisonTable = () => {
                     content: (
                       <>
                         Negative balance protection{" "}
-                        <span className="block md:inline">(retail clients only)</span>
+                        <span className="block md:inline">
+                          (retail clients only)
+                        </span>
                       </>
                     ),
                   },
@@ -399,7 +444,10 @@ const AccountComparisonTable = () => {
                   {
                     content: (
                       <>
-                        Accurately hedge a <span className="block md:inline">physical position</span>
+                        Accurately hedge a{" "}
+                        <span className="block md:inline">
+                          physical position
+                        </span>
                       </>
                     ),
                   },
@@ -438,7 +486,9 @@ const AccountComparisonTable = () => {
                     content: (
                       <>
                         GBP, EUR, USD, AUS, CAD,{" "}
-                        <span className="block md:inline">NOK, NZD, PLN, SEK, SGD</span>
+                        <span className="block md:inline">
+                          NOK, NZD, PLN, SEK, SGD
+                        </span>
                       </>
                     ),
                   },
@@ -446,7 +496,9 @@ const AccountComparisonTable = () => {
                     content: (
                       <>
                         GBP, EUR, USD, AUS, CAD,{" "}
-                        <span className="block md:inline">NOK, NZD, PLN, SEK, SGD</span>
+                        <span className="block md:inline">
+                          NOK, NZD, PLN, SEK, SGD
+                        </span>
                       </>
                     ),
                   },
@@ -469,7 +521,8 @@ const AccountComparisonTable = () => {
                   {
                     content: (
                       <>
-                        Support during <span className="block lg:inline">market hours</span>
+                        Support during{" "}
+                        <span className="block lg:inline">market hours</span>
                       </>
                     ),
                   },
@@ -487,7 +540,10 @@ const AccountComparisonTable = () => {
             />
           </AccordionContent>
         </AccordionItem>
-        <AccordionItem className="rounded-lg bg-white px-4 shadow" value="free-with-your-account">
+        <AccordionItem
+          className="rounded-lg bg-white px-4 shadow"
+          value="free-with-your-account"
+        >
           <AccordionTrigger>
             {" "}
             <h3 className="font-semibold">Free with your account</h3>
@@ -500,7 +556,8 @@ const AccountComparisonTable = () => {
                   {
                     content: (
                       <>
-                        Education, seminars <span className="block md:inline">& webinars</span>
+                        Education, seminars{" "}
+                        <span className="block md:inline">& webinars</span>
                       </>
                     ),
                   },
@@ -518,7 +575,10 @@ const AccountComparisonTable = () => {
                   {
                     content: (
                       <>
-                        CMC market analyst <span className="block md:inline">&apos;Insights&apos;</span>
+                        CMC market analyst{" "}
+                        <span className="block md:inline">
+                          &apos;Insights&apos;
+                        </span>
                       </>
                     ),
                   },
@@ -536,7 +596,8 @@ const AccountComparisonTable = () => {
                   {
                     content: (
                       <>
-                        Market calendar, <span className="block md:inline">powered by</span>
+                        Market calendar,{" "}
+                        <span className="block md:inline">powered by</span>
                         <span className="block md:inline">Thomson Reuters</span>
                       </>
                     ),
@@ -570,7 +631,9 @@ const AccountComparisonTable = () => {
                     content: (
                       <>
                         Morningstar quantitative{" "}
-                        <span className="block md:inline">equity research reports</span>
+                        <span className="block md:inline">
+                          equity research reports
+                        </span>
                       </>
                     ),
                   },

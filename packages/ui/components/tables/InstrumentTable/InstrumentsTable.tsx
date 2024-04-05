@@ -22,7 +22,7 @@ import {
   Tab,
   TabStyle,
 } from "./InstrumentTableTypes";
-import InstrumentsSearch from "@/components/widgets/InstrumentsSearch/InstrumentsSearch";
+import InstrumentsSearch from "../../../components/widgets/InstrumentsSearch/InstrumentsSearch";
 
 const InstrumentsTable = ({
   instrumentMappings,

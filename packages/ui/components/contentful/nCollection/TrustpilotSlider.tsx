@@ -3,7 +3,7 @@
  * @description A Trustpilot slider that can be used to display Trustpilot reviews.
  */
 
-import Lines from "@/components/global/Misc/Lines";
+import Lines from "../../../components/global/Misc/Lines";
 import { addDataAttributes, getThemeType } from "@/helpers/contentful";
 import React, { useEffect, useRef } from "react";
 import ComponentDebugger from "../debug/ComponentDebugger";
@@ -11,18 +11,18 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import {
   defaultRichTextOptions,
   documentToReactComponentsWrapper,
-} from "@/helpers/contentful/richTextOptions";
+} from "../../../helpers/contentful/richTextOptions";
 import {
   useContentfulInspectorMode,
   useContentfulLiveUpdates,
 } from "@contentful/live-preview/react";
-import { bgThemeClassMap } from "@/helpers/mappings/colorClassMap";
+import { bgThemeClassMap } from "../../../helpers/mappings/colorClassMap";
 
 const TrustpilotSlider = ({ content, debug }: { content: any; debug: any }) => {
   const inspectorProps = useContentfulInspectorMode({
     entryId: content.sys.id,
   });
-  const data = useContentfulLiveUpdates(content);
+  const data = process.env.STORYBOOK ? content : useContentfulLiveUpdates(content);
 
   const ref = useRef(null);
   const theme = data.fields.theme;
@@ -41,7 +41,7 @@ const TrustpilotSlider = ({ content, debug }: { content: any; debug: any }) => {
   };
 
   // Array which can contain ["Left", "Right"]
-  const lines = data.fields.border;
+  const lines = data.fields.border ?? [];
 
   useEffect(() => {
     // https://support.trustpilot.com/hc/en-us/articles/115011421468--Add-a-TrustBox-widget-to-a-single-page-application

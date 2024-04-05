@@ -1,38 +1,6 @@
-import Bodybanner from "ui/components/contentful/nBanners/Bodybanner";
-import Herobanner from "ui/components/contentful/nBanners/Herobanner";
-import MainHeroWide from "ui/components/contentful/nBanners/InstrumentHeroWide";
-// import SplitContentHeroBanner from "ui/components/contentful/nBanners/SplitContentHeroBanner";
-import UniversalCTABanner from "ui/components/contentful/nBanners/UniversalCTABanner";
-
-import AccountType from "ui/components/contentful/nCard/AccountType";
-import AwardsCard from "ui/components/contentful/nCard/AwardsCard";
-import FeatureCard from "ui/components/contentful/nCard/FeatureCard";
-import SummaryCard from "ui/components/contentful/nCard/SummaryCard";
-
-import AccountTypesSection from "ui/components/contentful/nCollection/AccountTypesSection";
-import Figures from "ui/components/contentful/nCollection/Figures";
-import HeroAccolades from "ui/components/contentful/nCollection/HeroAccolades";
-import Section from "ui/components/contentful/nCollection/Section";
-import TrustpilotSlider from "ui/components/contentful/nCollection/TrustpilotSlider";
-
-import Pageheader from "ui/components/contentful/nPageHeader/Pageheader";
-
-import AlphaBanner from "ui/components/contentful/nBanners/AlphaBanner";
-import InstrumentHeroWide from "ui/components/contentful/nBanners/InstrumentHeroWide";
-import nButton from "ui/components/contentful/nButton/nButton";
-import InstrumentCardsSection from "ui/components/contentful/nCollection/InstrumentCardsSection";
-import InstrumentsTableSection from "ui/components/contentful/nInstrumentsTable/InstrumentsTableSection";
-import NewsHub from "ui/components/contentful/nNews/NewsHub";
-import ContactInfo from "ui/components/contentful/nText/ContactInfo";
-import Disclaimer from "ui/components/contentful/nText/Disclaimer";
-import Footnotes from "ui/components/contentful/nText/Footnotes";
-import Inline from "ui/components/contentful/nText/Inline";
 import { Entry } from "contentful";
-import { removeWhitespace } from "../utils";
-import PlatformType from "ui/components/contentful/nCard/PlatformType";
-import PlatformTypesSection from "ui/components/contentful/nCollection/PlatformTypesSection";
-import FaqList from "ui/components/contentful/nFaqList/FaqList";
 import dynamic from "next/dynamic";
+import { removeWhitespace } from "../utils";
 
 export type ComponentStylingOptions = {
   columnClass: string;
@@ -51,9 +19,9 @@ export type DynamicComponentProps = {
 
 /**
  *  Get component name (This function may become deprecated soon)
- * @param item
- * @param componentFolder
- * @returns
+ * ../..param item
+ * ../..param componentFolder
+ * ../..returns
  */
 export const getComponentName = (
   item: any,
@@ -70,6 +38,9 @@ export const getComponentName = (
   }
   if (componentFolder === "nCard") {
     return removeWhitespace(item.fields.type);
+  }
+  if (componentFolder === "nCustomComponent") {
+    return removeWhitespace(item.fields.component);
   }
   if (componentFolder === "nInstrumentsTable") {
     return "InstrumentsTableSection";
@@ -96,54 +67,117 @@ export const getComponentName = (
 /**
  * Map the 'contentType' field to the respective component
  */
-// export const componentsMap: { [key: string]: React.ComponentType<any> | null } =
-export const componentsMap: any =
+export const componentsMap: { [key: string]: React.ComponentType<any> | null } =
   {
     // Banners
-    "nBanners/Bodybanner": Bodybanner,
-    "nBanners/Herobanner": Herobanner,
-    "nBanners/MainHeroWide": dynamic(() => import("ui/components/contentful/nBanners/InstrumentHeroWide")),
-    // "nBanners/InstrumentHeroWide": InstrumentHeroWide, // Alias for "MainHeroWide
-    "nBanners/SplitContentHeroBanner": dynamic(() => import("ui/components/contentful/nBanners/SplitContentHeroBanner")),
-    // "nBanners/SplitContentHeroBanner": SplitContentHeroBanner,
-    // "nBanners/UniversalCTABanner": UniversalCTABanner,
-    // "nBanners/AlphaBanner": AlphaBanner, // Alias for "UniversalCTABanner
-    // // nButtons
-    "nButton/nButton": dynamic(() => import("ui/components/contentful/nButton/nButton")),
-    // // Cards
-    // "nCard/AccountType": AccountType,
-    // "nCard/PlatformType": PlatformType,
-    // "nCard/AwardsCard": AwardsCard,
-    // "nCard/FeatureCard": FeatureCard,
-    // "nCard/SummaryCard": SummaryCard,
-    // // Collections
-    // "nCollection/AccountTypesSection": AccountTypesSection,
-    // "nCollection/PlatformTypesSection": PlatformTypesSection,
-    // "nCollection/Figures": Figures,
-    // "nCollection/HeroAccolades": HeroAccolades,
-    // "nCollection/Section": Section,
-    // "nCollection/TrustpilotSlider": TrustpilotSlider,
-    // "nCollection/InstrumentCardsSection": InstrumentCardsSection,
-    // // Instruments Table
-    // "nInstrumentsTable/InstrumentsTableSection": InstrumentsTableSection,
-    // // Page Headers
-    // "nPageHeader/Pageheader": Pageheader,
-    // // Text
-    // "nText/ContactInfo": ContactInfo,
-    // "nText/Footnotes": Footnotes,
-    // "nText/Disclaimer": Disclaimer,
-    // "nText/Inline": Inline,
-    // // News
-    // "nNews/NewsHub": NewsHub,
-    // // FAQ
-    // "nFaqList/FaqList": FaqList,
+    "nBanners/MainHeroWide": dynamic(
+      () => import("../../components/contentful/nBanners/InstrumentHeroWide")
+    ),
+    "nBanners/InstrumentHeroWide": dynamic(
+      () => import("../../components/contentful/nBanners/InstrumentHeroWide")
+    ),
+    "nBanners/SplitContentHeroBanner": dynamic(
+      () => import("../../components/contentful/nBanners/SplitContentHeroBanner")
+    ),
+    "nBanners/UniversalCTABanner": dynamic(
+      () => import("../../components/contentful/nBanners/UniversalCTABanner")
+    ),
+    "nBanners/AlphaBanner": dynamic(
+      () => import("../../components/contentful/nBanners/AlphaBanner")
+    ),
+    // nButtons
+    "nButton/nButton": dynamic(
+      () => import("../../components/contentful/nButton/nButton")
+    ),
+    // Cards
+    "nCard/AccountType": dynamic(
+      () => import("../../components/contentful/nCard/AccountType")
+    ),
+    "nCard/PlatformType": dynamic(
+      () => import("../../components/contentful/nCard/PlatformType")
+    ),
+    "nCard/AwardsCard": dynamic(
+      () => import("../../components/contentful/nCard/AwardsCard")
+    ),
+    "nCard/FeatureCard": dynamic(
+      () => import("../../components/contentful/nCard/FeatureCard")
+    ),
+    "nCard/SummaryCard": dynamic(
+      () => import("../../components/contentful/nCard/SummaryCard")
+    ),
+    // Collections
+    "nCollection/AccountTypesSection": dynamic(
+      () => import("../../components/contentful/nCollection/AccountTypesSection")
+    ),
+    "nCollection/AccountTypesWithInstrumentsSection": dynamic(
+      () =>
+        import(
+          "../../components/contentful/nCollection/AccountTypesWithInstrumentsSection"
+        )
+    ),
+    "nCollection/PlatformTypesSection": dynamic(
+      () => import("../../components/contentful/nCollection/PlatformTypesSection")
+    ),
+    "nCollection/Figures": dynamic(
+      () => import("../../components/contentful/nCollection/Figures")
+    ),
+    "nCollection/HeroAccolades": dynamic(
+      () => import("../../components/contentful/nCollection/HeroAccolades")
+    ),
+    "nCollection/Section": dynamic(
+      () => import("../../components/contentful/nCollection/Section")
+    ),
+    "nCollection/TrustpilotSlider": dynamic(
+      () => import("../../components/contentful/nCollection/TrustpilotSlider")
+    ),
+    "nCollection/InstrumentCardsSection": dynamic(
+      () => import("../../components/contentful/nCollection/InstrumentCardsSection")
+    ),
+
+    // Custom components
+    "nCustomComponent/ShareBasketsChart": dynamic(
+      () => import("../../components/contentful/nCustomComponent/ShareBasketsChart")
+    ),
+
+    // Instruments Table
+    "nInstrumentsTable/InstrumentsTableSection": dynamic(
+      () =>
+        import(
+          "../../components/contentful/nInstrumentsTable/InstrumentsTableSection"
+        )
+    ),
+    // Page Headers
+    "nPageHeader/Pageheader": dynamic(
+      () => import("../../components/contentful/nPageHeader/Pageheader")
+    ),
+    // Text
+    "nText/ContactInfo": dynamic(
+      () => import("../../components/contentful/nText/ContactInfo")
+    ),
+    "nText/Footnotes": dynamic(
+      () => import("../../components/contentful/nText/Footnotes")
+    ),
+    "nText/Disclaimer": dynamic(
+      () => import("../../components/contentful/nText/Disclaimer")
+    ),
+    "nText/Inline": dynamic(
+      () => import("../../components/contentful/nText/Inline")
+    ),
+    // News
+    "nNews/NewsHub": dynamic(
+      () => import("../../components/contentful/nNews/NewsHub")
+    ),
+    // FAQ
+    "nFaqList/FaqList": dynamic(
+      () => import("../../components/contentful/nFaqList/FaqList")
+    ),
   };
 
 /**
  *  Resolve component from componentsMap
- * @param componentFolder
- * @param componentName
- * @returns
+ * ../..param componentFolder
+ * ../..param componentName
+ * ../..returns
  */
 export const resolveComponent = (
   componentFolder: string,
@@ -153,16 +187,33 @@ export const resolveComponent = (
   return componentsMap[key] || null;
 };
 
+export const getFirstComponentByType = (
+  items: Entry<{ internalName: string }>[],
+  type: string
+) => {
+  return items.find((item) => item.sys.contentType.sys.id === type);
+};
+
 /**
  * Render nested components from contentful
  * IMPORTANT NOTE: You cannot dynamically import with template literals or by storing component paths in a variable.
- * Reminder: Add to get components by type
- * @param items
- * @returns
+ * ../..param items - Items to render
+ * ../..param stylingOptions - Styling options for the component
+ * ../..param only - Only render components with these content types
+ * ../..returns
  */
-export const renderComponents = (
-  items: Entry<{ internalName: string }>[],
-  stylingOptions?: ComponentStylingOptions
+export const RenderComponents = (
+  {
+    items,
+    stylingOptions,
+    only  = [],
+    className,
+  } : {
+    items: Entry<{ internalName: string }>[], // Items to render
+    stylingOptions?: ComponentStylingOptions, // Styling options for the component
+    only?: Array<string>, // Only render components with these content types
+    className?: string,
+  }
 ) => {
   if (items === undefined) {
     console.error(`Component contains no items.`);
@@ -172,43 +223,125 @@ export const renderComponents = (
 
     return;
   }
-  return items.map((item, index) => {
-    const componentFolder = item.sys.contentType.sys.id;
-    const componentName = getComponentName(item, componentFolder);
-    const componentData = item;
 
-    if (typeof componentData.sys.contentType === "undefined") {
-      return <div key={index}>Linked item was removed.</div>;
+  // Extract items from the array which match the content types in the 'only' array
+  if (only.length > 0) {
+    items = items.filter((item) => only.includes(item.sys.contentType.sys.id));
+  }
+
+  return (
+    <div data-sub className={className} >
+      {
+        items.map((item, index) => {
+          const componentFolder = item.sys.contentType.sys.id;
+          const componentName = getComponentName(item, componentFolder);
+          const componentData = item;
+
+          if (typeof componentData.sys.contentType === "undefined") {
+            return <div key={index}>Linked item was removed.</div>;
+          }
+
+          if (process.env.ENV === "LOCAL" || process.env.ENV === "DEV") {
+            console.log(
+              "Component path: ../../components/contentful/" +
+                componentFolder +
+                "/" +
+                componentName
+            );
+          }
+
+          const Component = resolveComponent(componentFolder, componentName);
+
+          if (Component) {
+            return (
+              <Component
+                debug={process.env.STORYBOOK ? {
+                  componentName: `${componentFolder}/${componentName}`,
+                  component: true,
+                  id: `${componentFolder}-${componentName}_${index + 1}`
+                } : {
+                  contentfulContentTypeId: componentData.sys.contentType.sys.id,
+                  contentfulId: componentData.sys.id,
+                  componentName: `${componentFolder}/${componentName}`,
+                }}
+                content={componentData}
+                stylingOptions={stylingOptions}
+                key={index}
+            />
+            );
+          } else {
+            return <div key={index}>Component not found.</div>;
+          }
+        })
+      }
+    </div>
+  )
+};
+
+export const renderComponents = (
+    items: Entry<{ internalName: string }>[], // Items to render
+    stylingOptions?: ComponentStylingOptions, // Styling options for the component
+    only: Array<string> = [], // Only render components with these content types
+) => {
+  if (items === undefined) {
+    console.error(`Component contains no items.`);
+    if (process.env.ENV === "LOCAL") {
+      return <div className="text-red-600">Component contains no items</div>;
     }
 
-    if (process.env.ENV === "LOCAL" || process.env.ENV === "DEV") {
-      console.log(
-        "Component path: ui/components/contentful/" +
-          componentFolder +
-          "/" +
-          componentName
-      );
-    }
+    return;
+  }
 
-    const Component = resolveComponent(componentFolder, componentName);
+  // Extract items from the array which match the content types in the 'only' array
+  if (only.length > 0) {
+    items = items.filter((item) => only.includes(item.sys.contentType.sys.id));
+  }
 
-    if (Component) {
-      return (
-        <div id={componentName} data-component={true} key={index}>        
-          <Component
-            debug={{
-              contentfulContentTypeId: componentData.sys.contentType.sys.id,
-              contentfulId: componentData.sys.id,
-              componentName: `${componentFolder}/${componentName}`,
-            }}
-            content={componentData}
-            stylingOptions={stylingOptions}
-            // key={index}
-          />
-        </div>
-      );
-    } else {
-      return <div key={index}>Component not found.</div>;
-    }
-  });
+  return (
+    <>
+      {
+        items.map((item, index) => {
+          const componentFolder = item.sys.contentType.sys.id;
+          const componentName = getComponentName(item, componentFolder);
+          const componentData = item;
+
+          if (typeof componentData.sys.contentType === "undefined") {
+            return <div key={index}>Linked item was removed.</div>;
+          }
+
+          if (process.env.ENV === "LOCAL" || process.env.ENV === "DEV") {
+            console.log(
+              "Component path: ../../components/contentful/" +
+                componentFolder +
+                "/" +
+                componentName
+            );
+          }
+
+          const Component = resolveComponent(componentFolder, componentName);
+
+          if (Component) {
+            return (
+                <Component
+                  debug={process.env.STORYBOOK ? {
+                    componentName: `${componentFolder}/${componentName}`,
+                    component: true,
+                    id: `${componentFolder}-${componentName}_${index + 1}`
+                  } : {
+                    contentfulContentTypeId: componentData.sys.contentType.sys.id,
+                    contentfulId: componentData.sys.id,
+                    componentName: `${componentFolder}/${componentName}`,
+                  }}
+                  content={componentData}
+                  stylingOptions={stylingOptions}
+                  key={index}
+                />
+            );
+          } else {
+            return <div key={index}>Component not found.</div>;
+          }
+        })
+      }
+    </>
+  )
 };

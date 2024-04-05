@@ -1,8 +1,9 @@
 // Currently only supports latest 3 articles but may be extended in the future
 
+import React from "react";
 import ComponentDebugger from "../debug/ComponentDebugger";
-import LatestNews from "@/components/modules/Common/News/LatestNews";
-import { documentToReactComponentsWrapper } from "@/helpers/contentful/richTextOptions";
+import LatestNews from "../../../components/modules/Common/News/LatestNews";
+import { documentToReactComponentsWrapper } from "../../../helpers/contentful/richTextOptions";
 
 const NewsHub = ({ content, debug }: { content: any; debug: any }) => {
   return (

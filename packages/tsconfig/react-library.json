@@ -6,6 +6,15 @@
     "lib": ["ES2015", "DOM"],
     "module": "ESNext",
     "target": "ES6",
-    "jsx": "react-jsx"
-  }
+    "jsx": "react-jsx",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"],
+      "@/helpers/*": ["./helpers/*"],
+      "@/components/*": ["./components/*"],
+      "@components/*": ["./components/*"],
+      "react": ["./node_modules/@types/react"]
+    }
+  },
+  "include": ["./*", "./stories", "./components", "./components/*", "./components/**/*", "./"]
 }

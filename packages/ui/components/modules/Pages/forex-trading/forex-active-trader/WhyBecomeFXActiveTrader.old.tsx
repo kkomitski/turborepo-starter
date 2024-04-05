@@ -1,6 +1,6 @@
 import { awsImage } from "@/helpers/constants";
 import Image from "next/image";
-;
+import React from "react";
 
 const WhyBecomeFXActiveTrader = () => {
   return (

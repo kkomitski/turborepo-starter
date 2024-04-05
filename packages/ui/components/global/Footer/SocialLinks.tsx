@@ -1,5 +1,7 @@
 import { awsImage } from "@/helpers/constants";
 import Image from "next/image";
+import React from "react";
+
 const SocialLinks = () => {
   return (
     <div className="w-full border-t border-t-navy-70 pb-8 pt-4 md:col-span-3 md:pb-0">

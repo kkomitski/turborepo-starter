@@ -2,7 +2,7 @@ import React, { ReactNode } from "react";
 import HeroAccoladesSectionA from "../../Common/Hero/Common/HeroAccoladesSectionA";
 import Image from "next/image";
 import constants, { awsImage } from "@/helpers/constants";
-import TrustpilotWidgetMicro from "@/components/widgets/TrustpilotWidgetMicro";
+import TrustpilotWidgetMicro from "../../../components/widgets/TrustpilotWidgetMicro";
 import OnboardingButton from "@/components/elements/OnboardingButton";
 
 const Hero = () => {

@@ -3,6 +3,12 @@
 module.exports = {
   mode: "jit",
   darkMode: "class",
+  purge: {
+    content: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
+    options: {
+      whitelist: ["shadow-2xl", "grid md:grid-cols-2",  "md:grid-cols-3", "sm:grid-cols-2", "md:grid-cols-4","sm:grid-cols-2", "lg:grid-cols-5" ],
+    },
+  },
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./helpers/contentful.{js,ts,jsx,tsx,mdx}",
@@ -10,6 +16,7 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./stories/**/*.{js,ts,jsx,tsx,mdx}",
+    "./**/*.{js,ts,jsx,tsx,mdx}"
   ],
   theme: {
     fontFamily: {
@@ -19,7 +26,8 @@ module.exports = {
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "gradient-conic":
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
         azure: {

@@ -1,5 +1,7 @@
 import { awsImage } from "@/helpers/constants";
 import Image from "next/image";
+import React from "react";
+
 const LanguageSelectorMenu = ({ isOpen = false }: { isOpen: Boolean }) => {
   return (
     <div
@@ -15,70 +17,130 @@ const LanguageSelectorMenu = ({ isOpen = false }: { isOpen: Boolean }) => {
           href="https://www.cmcmarkets.com/de-de"
           className="flex items-center gap-x-2 bg-navy-40 p-2 text-sm no-underline hover:bg-navy-20"
         >
-          <Image className="h-4 w-[22px]" src={awsImage("flag_DE.png")} alt="" width={22} height={16} />
+          <Image
+            className="h-4 w-[22px]"
+            src={awsImage("flag_DE.png")}
+            alt=""
+            width={22}
+            height={16}
+          />
           <span>Deutschland</span>
         </a>
         <a
           href="https://www.cmcmarkets.com/nb-no"
           className="flex items-center gap-x-2 bg-navy-40 p-2 text-sm no-underline hover:bg-navy-20"
         >
-          <Image className="h-4 w-[22px]" src={awsImage("flag_NO.png")} alt="" width={22} height={16} />
+          <Image
+            className="h-4 w-[22px]"
+            src={awsImage("flag_NO.png")}
+            alt=""
+            width={22}
+            height={16}
+          />
           <span>Norge</span>
         </a>
         <a
           href="https://www.cmcmarkets.com/es-es"
           className="flex items-center gap-x-2 bg-navy-40 p-2 text-sm no-underline hover:bg-navy-20"
         >
-          <Image className="h-4 w-[22px]" src={awsImage("flag_ES.png")} alt="" width={22} height={16} />
+          <Image
+            className="h-4 w-[22px]"
+            src={awsImage("flag_ES.png")}
+            alt=""
+            width={22}
+            height={16}
+          />
           <span>España</span>
         </a>
         <a
           href="https://www.cmcmarkets.com/de-at"
           className="flex items-center gap-x-2 bg-navy-40 p-2 text-sm no-underline hover:bg-navy-20"
         >
-          <Image className="h-4 w-[22px]" src={awsImage("flag_AT.png")} alt="" width={22} height={16} />
+          <Image
+            className="h-4 w-[22px]"
+            src={awsImage("flag_AT.png")}
+            alt=""
+            width={22}
+            height={16}
+          />
           <span>Österreich</span>
         </a>
         <a
           href="https://www.cmcmarkets.com/fr-fr"
           className="flex items-center gap-x-2 bg-navy-40 p-2 text-sm no-underline hover:bg-navy-20"
         >
-          <Image className="h-4 w-[22px]" src={awsImage("flag_FR.png")} alt="" width={22} height={16} />
+          <Image
+            className="h-4 w-[22px]"
+            src={awsImage("flag_FR.png")}
+            alt=""
+            width={22}
+            height={16}
+          />
           <span>France</span>
         </a>
         <a
           href="https://www.cmcmarkets.com/pl-pl"
           className="flex items-center gap-x-2 bg-navy-40 p-2 text-sm no-underline hover:bg-navy-20"
         >
-          <Image className="h-4 w-[22px]" src={awsImage("flag_PO.png")} alt="" width={22} height={16} />
+          <Image
+            className="h-4 w-[22px]"
+            src={awsImage("flag_PO.png")}
+            alt=""
+            width={22}
+            height={16}
+          />
           <span>Polska</span>
         </a>
         <a
           href="https://www.cmcmarkets.com/en-ie"
           className="flex items-center gap-x-2 bg-navy-40 p-2 text-sm no-underline hover:bg-navy-20"
         >
-          <Image className="h-4 w-[22px]" src={awsImage("flag_IE.png")} alt="" width={22} height={16} />
+          <Image
+            className="h-4 w-[22px]"
+            src={awsImage("flag_IE.png")}
+            alt=""
+            width={22}
+            height={16}
+          />
           <span>Ireland</span>
         </a>
         <a
           href="https://www.cmcmarkets.com/sv-se"
           className="flex items-center gap-x-2 bg-navy-40 p-2 text-sm no-underline hover:bg-navy-20"
         >
-          <Image className="h-4 w-[22px]" src={awsImage("flag_SE.png")} alt="" width={22} height={16} />
+          <Image
+            className="h-4 w-[22px]"
+            src={awsImage("flag_SE.png")}
+            alt=""
+            width={22}
+            height={16}
+          />
           <span>Sverige</span>
         </a>
         <a
           href="https://www.cmcmarkets.com/it-it"
           className="flex items-center gap-x-2 bg-navy-40 p-2 text-sm no-underline hover:bg-navy-20"
         >
-          <Image className="h-4 w-[22px]" src={awsImage("flag_IT.png")} alt="" width={22} height={16} />
+          <Image
+            className="h-4 w-[22px]"
+            src={awsImage("flag_IT.png")}
+            alt=""
+            width={22}
+            height={16}
+          />
           <span>Italia</span>
         </a>
         <a
           href="https://www.cmcmarkets.com/en-gb"
           className="flex items-center gap-x-2 bg-azure-70 p-2 text-sm no-underline"
         >
-          <Image className="h-4 w-[22px]" src={awsImage("flag_GB.png")} alt="" width={22} height={16} />
+          <Image
+            className="h-4 w-[22px]"
+            src={awsImage("flag_GB.png")}
+            alt=""
+            width={22}
+            height={16}
+          />
           <span>United Kingdom</span>
         </a>
       </div>
@@ -86,7 +148,13 @@ const LanguageSelectorMenu = ({ isOpen = false }: { isOpen: Boolean }) => {
       <span className="mb-2 block uppercase">APAC</span>
       <div className="mb-8 grid gap-1">
         <span className="flex items-center gap-x-2 bg-navy-40 p-2 text-sm no-underline hover:bg-navy-20">
-          <Image className="h-4 w-[22px]" src={awsImage("flag_AU.png")} alt="" width={22} height={16} />
+          <Image
+            className="h-4 w-[22px]"
+            src={awsImage("flag_AU.png")}
+            alt=""
+            width={22}
+            height={16}
+          />
           <span className="inline-flex gap-x-2">
             <a href="https://www.cmcmarkets.com/en-au">Australia</a> |
             <a href="https://www.cmcmarkets.com/en-au">English</a>
@@ -94,7 +162,13 @@ const LanguageSelectorMenu = ({ isOpen = false }: { isOpen: Boolean }) => {
           </span>
         </span>
         <span className="flex items-center gap-x-2 bg-navy-40 p-2 text-sm no-underline hover:bg-navy-20">
-          <Image className="h-4 w-[22px]" src={awsImage("flag_NZ.png")} alt="" width={22} height={16} />
+          <Image
+            className="h-4 w-[22px]"
+            src={awsImage("flag_NZ.png")}
+            alt=""
+            width={22}
+            height={16}
+          />
           <span className="inline-flex gap-x-2">
             {" "}
             <a href="https://www.cmcmarkets.com/en-nz">New Zealand</a> |
@@ -103,7 +177,13 @@ const LanguageSelectorMenu = ({ isOpen = false }: { isOpen: Boolean }) => {
           </span>
         </span>
         <span className="flex items-center gap-x-2 bg-navy-40 p-2 text-sm no-underline hover:bg-navy-20">
-          <Image className="h-4 w-[22px]" src={awsImage("flag_SG.png")} alt="" width={22} height={16} />
+          <Image
+            className="h-4 w-[22px]"
+            src={awsImage("flag_SG.png")}
+            alt=""
+            width={22}
+            height={16}
+          />
           <span className="inline-flex gap-x-2">
             {" "}
             <a href="https://www.cmcmarkets.com/en-sg">Singapore</a> |
@@ -116,7 +196,13 @@ const LanguageSelectorMenu = ({ isOpen = false }: { isOpen: Boolean }) => {
       <span className="mb-2 block uppercase">NAFTA</span>
       <div className="mb-8 grid gap-1">
         <span className="flex items-center gap-x-2 bg-navy-40 p-2 text-sm no-underline hover:bg-navy-20">
-          <Image className="h-4 w-[22px]" src={awsImage("flag_CA.png")} alt="" width={22} height={16} />
+          <Image
+            className="h-4 w-[22px]"
+            src={awsImage("flag_CA.png")}
+            alt=""
+            width={22}
+            height={16}
+          />
           <span className="inline-flex gap-x-2">
             <a href="https://www.cmcmarkets.com/en-ca">Canada</a> |
             <a href="https://www.cmcmarkets.com/en-ca">English</a>{" "}

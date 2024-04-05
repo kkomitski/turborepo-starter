@@ -1,3 +1,5 @@
+import React from "react";
+
 const MobileCloseBtn = (props: any) => {
   return (
     <button
@@ -14,7 +16,12 @@ const MobileCloseBtn = (props: any) => {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path d="M8 24L24 8M8 8L24 24" stroke="#101626" strokeLinecap="round" strokeLinejoin="round" />
+        <path
+          d="M8 24L24 8M8 8L24 24"
+          stroke="#101626"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
       </svg>
     </button>
   );

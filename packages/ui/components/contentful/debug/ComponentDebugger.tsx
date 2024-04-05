@@ -1,9 +1,15 @@
 // DebugInfo.tsx
+import React from "react";
 import { JsonView, collapseAllNested, darkStyles } from "react-json-view-lite";
 import "react-json-view-lite/dist/index.css";
-import React from "react";
 
-const ComponentDebugger = ({ debug, content }: { debug: any; content: any }) => {
+const ComponentDebugger = ({
+  debug,
+  content,
+}: {
+  debug: any;
+  content: any;
+}) => {
   if (process.env.ENV !== "LOCAL" && process.env.ENV !== "DEV") {
     return null;
   }
@@ -39,7 +45,11 @@ const ComponentDebugger = ({ debug, content }: { debug: any; content: any }) => 
       <details className="w-full">
         <summary>JSON</summary>
         <pre className="max-h-[300px] overflow-y-scroll">
-          <JsonView style={darkStyles} shouldExpandNode={collapseAllNested} data={content.fields} />
+          <JsonView
+            style={darkStyles}
+            shouldExpandNode={collapseAllNested}
+            data={content.fields}
+          />
         </pre>
       </details>
     </div>

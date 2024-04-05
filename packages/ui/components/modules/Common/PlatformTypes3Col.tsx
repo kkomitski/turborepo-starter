@@ -2,7 +2,7 @@ import React, { ForwardedRef, ReactElement, forwardRef } from "react";
 import PlatformWeb from "./PlatformTypes/PlatformWeb";
 import PlatformMobile from "./PlatformTypes/PlatformMobile";
 import PlatformMT4 from "./PlatformTypes/PlatformMT4";
-import Lines from "@/components/global/Misc/Lines";
+import Lines from "../../../components/global/Misc/Lines";
 
 const PlatformTypes3Col = forwardRef(
   (

@@ -2,6 +2,7 @@
   "name": "ui",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "next build",
     "build-storybook": "storybook build",
@@ -11,6 +12,7 @@
     "start": "next start"
   },
   "resolutions": {
+    "@types/mime": "3.0.4",
     "@types/react": "^18"
   },
   "dependencies": {
@@ -22,12 +24,13 @@
     "@chromatic-com/storybook": "^1.2.25",
     "@storybook/addon-essentials": "^8.0.4",
     "@storybook/addon-interactions": "^8.0.4",
-    "@storybook/addon-links": "^8.0.4",
+    "@storybook/addon-links": "^8.0.6",
     "@storybook/addon-onboarding": "^8.0.4",
     "@storybook/addon-viewport": "^8.0.5",
     "@storybook/blocks": "^8.0.4",
     "@storybook/nextjs": "^8.0.4",
     "@storybook/react": "^8.0.4",
+    "@storybook/react-vite": "^8.0.5",
     "@storybook/test": "^8.0.4",
     "@types/node": "^20",
     "@types/react": "^18",
@@ -40,6 +43,9 @@
     "storybook": "^8.0.4",
     "storybook-addon-deep-controls": "^0.6.1",
     "tailwindcss": "^3.3.0",
-    "typescript": "^5"
+    "tsconfig-paths-webpack-plugin": "^4.1.0",
+    "typescript": "^5",
+    "vite": "^5.2.8",
+    "vite-tsconfig-paths": "^4.3.2"
   }
 }

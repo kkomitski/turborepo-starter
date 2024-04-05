@@ -1,5 +1,11 @@
+import React from "react";
 import Link from "next/link";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { FooterLinks } from "../Footer";
 
 const MobileLinks = ({ accordionData }: { accordionData: FooterLinks }) => {
@@ -19,11 +25,18 @@ const MobileLinks = ({ accordionData }: { accordionData: FooterLinks }) => {
               {accordion.pages.map((page, index) => (
                 <React.Fragment key={index}>
                   {page.linkType === "nextLink" ? (
-                    <Link data-next-link className="no-underline first:pt-4 md:first:pt-0" href={page.url}>
+                    <Link
+                      data-next-link
+                      className="no-underline first:pt-4 md:first:pt-0"
+                      href={page.url}
+                    >
                       {page.pageName}
                     </Link>
                   ) : (
-                    <a className="no-underline first:pt-4 md:first:pt-0" href={page.url}>
+                    <a
+                      className="no-underline first:pt-4 md:first:pt-0"
+                      href={page.url}
+                    >
                       {page.pageName}
                     </a>
                   )}

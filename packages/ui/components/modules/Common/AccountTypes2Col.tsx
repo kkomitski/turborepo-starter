@@ -8,7 +8,7 @@ import React, {
   forwardRef,
 } from "react";
 import AccountType from "./AccountTypes/AccountType";
-import Lines from "@/components/global/Misc/Lines";
+import Lines from "../../../components/global/Misc/Lines";
 
 const AccountTypes2Col = forwardRef(
   (

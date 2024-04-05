@@ -3,7 +3,7 @@ import {
   btnSizeTypes,
   btnVariantClassMap,
   btnVariantTypes,
-} from "@/helpers/mappings/btnClassMap";
+} from "../../helpers/mappings/btnClassMap";
 import React, { ReactNode, AnchorHTMLAttributes } from "react";
 import RightArrowSVG from "../svg/RightArrowSVG";
 
@@ -23,8 +23,6 @@ type Props = {
 const OnboardingButton = (props: Props) => {
   const { variant, params, account, size, children, ...rest } = props;
 
-  console.log(variant)
-
   // Fallback params if params not provided
   const defaultIframeParams = {
     demo: "jid=gb3&amp;iaid=null&amp;lsrc=1",
@@ -34,7 +32,7 @@ const OnboardingButton = (props: Props) => {
   const iframeParams = props.params || defaultIframeParams[props.account];
 
   // Apply main button class (e.g. azure, primary-outline)
-  const btnVariant = btnVariantClassMap[variant] || "";
+  const btnVariant = btnVariantClassMap[variant.toLowerCase()] || "";
 
   // Apply button size class (e.g. btn-sm, btn-md, btn-lg)
   const btnSize = size ? btnSizeClassMap[size.toLowerCase()] : "";

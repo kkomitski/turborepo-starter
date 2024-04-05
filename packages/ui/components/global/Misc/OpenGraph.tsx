@@ -1,3 +1,5 @@
+import React from "react";
+
 type Props = {
   imageURL?: string;
   title?: string;

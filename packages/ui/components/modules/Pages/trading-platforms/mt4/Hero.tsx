@@ -1,14 +1,14 @@
 import React, { ForwardedRef, forwardRef } from "react";
 import Image from "next/image";
-import TrustpilotWidgetMicro from "@/components/widgets/TrustpilotWidgetMicro";
+import TrustpilotWidgetMicro from "../../../components/widgets/TrustpilotWidgetMicro";
 import { awsImage } from "@/helpers/constants";
 import usePlatformDetector, {
   OperatingSystem,
 } from "@/hooks/usePlatformDetector";
 import WindowsIconSVG from "@/components/svg/WindowsIconSVG";
 import MacOSIconSVG from "@/components/svg/MacOSIconSVG";
-import PlayStoreSVG from "@/components/svg/PlayStoreSVG";
-import IOSIconSVG from "@/components/svg/IOSIconSVG";
+import PlayStoreSVG from "../../../components/svg/PlayStoreSVG";
+import IOSIconSVG from "../../../components/svg/IOSIconSVG";
 import OnboardingButton from "@/components/elements/OnboardingButton";
 
 type Props = {};

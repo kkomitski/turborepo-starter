@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ReactNode, AnchorHTMLAttributes } from "react";
+import React, { ReactNode, AnchorHTMLAttributes } from "react";
 import RightArrowSVG from "../svg/RightArrowSVG";
 import {
   btnSizeClassMap,
@@ -10,23 +10,25 @@ import {
 import { cn } from "@/lib/utils-shadcn";
 import { LinkTypes } from "@/helpers/types/general";
 
-export type ButtonProps = {
+type Props = {
   variant: btnVariantTypes;
   size?: btnSizeTypes;
-  href?: string;
+  href: string;
   icon?: "arrow" | "external-link";
   linkType?: LinkTypes;
   children: ReactNode;
 } & AnchorHTMLAttributes<HTMLAnchorElement>; // Merge with AnchorHTMLAttributes
 
-const Button = (props: ButtonProps | any) => {
+const Button = (props: Props) => {
   const { variant, href, linkType, size, children, ...rest } = props;
 
   const btnLinkType = linkType || "nextLink";
-  const btnVariant = btnVariantClassMap[variant.variant.toLowerCase()] || "";
+  const btnVariant = btnVariantClassMap[variant] || "";
   const btnSize = size ? btnSizeClassMap[size.toLowerCase()] : "";
   const btnWithIcon = props.icon ? "btn-with-icon" : "";
-  const classNames = `btn ${btnVariant} ${btnSize} ${btnWithIcon} ${props.className ?? ""}`;
+  const classNames = `btn ${btnVariant} ${btnSize} ${btnWithIcon} ${
+    props.className ?? ""
+  }`;
 
   let iconNode = null;
 
@@ -40,22 +42,24 @@ const Button = (props: ButtonProps | any) => {
   }
 
   return (
-    // <>
-    <div className="bg-alpha-100 pb-10">
-      {btnLinkType === "nextLink" && href ? (
-        <Link data-next-link href={href} {...rest} className={`${cn(classNames, rest.className)}`}>
-          <>
-            <span>{children}</span>
-            {iconNode}
-          </>
+    <>
+      {btnLinkType === "nextLink" ? (
+        <Link
+          data-next-link
+          href={href}
+          {...rest}
+          className={cn(classNames, rest.className)}
+        >
+          <span>{children}</span>
+          {iconNode}
         </Link>
       ) : (
-        <a href={href} {...rest} className={`${cn(classNames, rest.className)}`}>
+        <a href={href} {...rest} className={cn(classNames, rest.className)}>
           <span>{children}</span>
           {iconNode}
         </a>
       )}
-    </div>
+    </>
   );
 };
 

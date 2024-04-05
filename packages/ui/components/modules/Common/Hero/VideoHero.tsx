@@ -1,4 +1,4 @@
-import TrustpilotWidgetMicro from "@/components/widgets/TrustpilotWidgetMicro";
+import TrustpilotWidgetMicro from "../../../components/widgets/TrustpilotWidgetMicro";
 import Image from "next/image";
 import React, { ReactNode } from "react";
 

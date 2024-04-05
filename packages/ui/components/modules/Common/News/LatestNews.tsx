@@ -1,3 +1,4 @@
+import React from "react";
 import NewsListing from "./NewsListing";
 
 interface Article {
@@ -23,7 +24,9 @@ const LatestNews = (props: any) => {
       <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
         {props.posts &&
           props.posts.length > 0 &&
-          props.posts.map((article: Article) => <NewsListing key={article.url} article={article} />)}
+          props.posts.map((article: Article) => (
+            <NewsListing key={article.url} article={article} />
+          ))}
       </div>
     </>
   );

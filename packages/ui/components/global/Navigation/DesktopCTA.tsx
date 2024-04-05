@@ -1,6 +1,8 @@
-import OnboardingButton from "@/components/elements/OnboardingButton";
+import OnboardingButton from "../../../components/elements/OnboardingButton";
 import { overrideOnboardingParams } from "@/helpers/utils";
 import { useRouter } from "next/router";
+import React from "react";
+
 const DesktopCTA = () => {
   const router = useRouter();
   const onboardingParams = overrideOnboardingParams(router.pathname);
@@ -12,7 +14,12 @@ const DesktopCTA = () => {
       >
         Log in
       </a>
-      <OnboardingButton className="px-4 py-2" account="live" variant="azure" params={onboardingParams}>
+      <OnboardingButton
+        className="px-4 py-2"
+        account="live"
+        variant="azure"
+        params={onboardingParams}
+      >
         Start trading
       </OnboardingButton>
     </div>

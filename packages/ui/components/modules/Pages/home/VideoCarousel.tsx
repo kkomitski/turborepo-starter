@@ -11,7 +11,7 @@ import PlayArrowSVG from "@/components/svg/PlayArrowSVG";
 import { awsImage } from "@/helpers/constants";
 import LazyYoutube from "@/components/LazyYoutube";
 import { X } from "lucide-react";
-import Lines from "@/components/global/Misc/Lines";
+import Lines from "../../../components/global/Misc/Lines";
 
 type VideoCarouselSlide = {
   title: string;

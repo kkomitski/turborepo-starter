@@ -1,4 +1,4 @@
-;
+import React from "react";
 import { priceValue } from "@/helpers/instruments";
 import { InstrumentData } from "./InstrumentCardDeck";
 import Image from "next/image";

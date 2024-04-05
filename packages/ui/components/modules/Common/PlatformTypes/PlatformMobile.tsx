@@ -1,9 +1,9 @@
 import Button from "@/components/elements/Button";
-import MobileAppQRCode from "@/components/global/Misc/MobileQRCode";
+import MobileAppQRCode from "../../../components/global/Misc/MobileQRCode";
 import MobileQRCode from "@/components/global/Misc/MobileQRCode";
 import AppleStoreSVG from "@/components/svg/AppStoreSVG";
-import GoBackArrowSVG from "@/components/svg/GoBackArrowSVG";
-import PlayStoreSVG from "@/components/svg/PlayStoreSVG";
+import GoBackArrowSVG from "../../../components/svg/GoBackArrowSVG";
+import PlayStoreSVG from "../../../components/svg/PlayStoreSVG";
 import QRCodeSVG from "@/components/svg/QRCodeSVG";
 import RightArrowSVG from "@/components/svg/RightArrowSVG";
 import constants, { awsImage } from "@/helpers/constants";

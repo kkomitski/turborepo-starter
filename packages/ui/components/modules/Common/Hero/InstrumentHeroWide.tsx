@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React, { ForwardedRef, ReactNode, forwardRef } from "react";
 import HeroAccoladesSectionA from "./Common/HeroAccoladesSectionA";
-import TrustpilotWidgetMicro from "@/components/widgets/TrustpilotWidgetMicro";
+import TrustpilotWidgetMicro from "../../../components/widgets/TrustpilotWidgetMicro";
 import { awsImage } from "@/helpers/constants";
 import OnboardingButton from "@/components/elements/OnboardingButton";
 

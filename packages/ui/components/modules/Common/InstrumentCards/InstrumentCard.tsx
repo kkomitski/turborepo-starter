@@ -1,3 +1,4 @@
+import React from "react";
 import { priceValue } from "@/helpers/instruments";
 import { InstrumentData } from "./InstrumentCardDeck";
 import Image from "next/image";
@@ -28,7 +29,9 @@ const InstrumentCard = ({
           />
         ) : null}
         <div className="mb-1 flex justify-between">
-          <div className="text-xl md:text-lg 2xl:text-xl">{instrument?.data?.instrument.abbreviation}</div>
+          <div className="text-xl md:text-lg 2xl:text-xl">
+            {instrument?.data?.instrument.abbreviation}
+          </div>
           <div className="text-xl text-navy-20 md:text-lg 2xl:text-xl">
             {priceValue(instrument?.data?.price)}
           </div>
@@ -60,7 +63,9 @@ const InstrumentCard = ({
         <div
           className={
             "text-5xl md:text-4xl 2xl:text-5xl " +
-            (isPositive(instrument?.data?.price.movement_percentage) ? "text-green-700" : "text-red-600")
+            (isPositive(instrument?.data?.price.movement_percentage)
+              ? "text-green-700"
+              : "text-red-600")
           }
         >
           {movementPercentage(instrument?.data?.price.movement_percentage)}

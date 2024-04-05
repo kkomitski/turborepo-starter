@@ -17,8 +17,13 @@
     "strict": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@/helpers/*": ["./helpers/*"],
+      "@/components/*": ["./components/*"],
+      "@components/*": ["./components/*"],
+      "react": ["./node_modules/@types/react"]
     }
   },
+  "include": ["./*", "./stories", "./components", "./components/*", "./components/**/*", "./"],
   "exclude": ["node_modules"]
 }

@@ -3,8 +3,8 @@ import Image from "next/image";
 import { ReactNode } from "react";
 
 import { awsImage } from "@/helpers/constants";
-import { renderComponents } from "@/helpers/contentful/components";
-import { documentToReactComponentsWrapper } from "@/helpers/contentful/richTextOptions";
+import { renderComponents } from "../../../helpers/contentful/components";
+import { documentToReactComponentsWrapper } from "../../../helpers/contentful/richTextOptions";
 import { BLOCKS } from "@contentful/rich-text-types"; // temp
 import {
   useContentfulInspectorMode,
@@ -25,7 +25,7 @@ const AccountType = ({ content }: { content: Content }) => {
   const inspectorProps = useContentfulInspectorMode({
     entryId: content.sys.id,
   });
-  const data = useContentfulLiveUpdates(content);
+  const data = process.env.STORYBOOK ? content : useContentfulLiveUpdates(content);
 
   type BulletItem = {
     content: ReactNode;

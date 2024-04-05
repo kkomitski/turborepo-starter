@@ -1,4 +1,5 @@
-import constants from "@/helpers/constants";
+import constants, { awsImage } from "@/helpers/constants";
+import Image from "next/image";
 import React, { ReactNode } from "react";
 
 type Props = {
@@ -12,18 +13,18 @@ type Props = {
 const authors: Record<Props["author"], ReactNode> = {
   michaelHewson: (
     <div className="mb-6 flex w-full flex-col border-b border-b-navy-20 pb-2 dark:border-b-white-85 sm:flex-row sm:items-end sm:justify-between md:mb-8">
-      <small className="flex flex-col gap-x-4 pb-2 pt-10 sm:flex-row">
+      {/* <small className="flex flex-col gap-x-4 pb-2 pt-10 sm:flex-row">
         <span>Published on: 08/10/2021</span>
         <span className="hidden sm:block">|</span>
         <span>Modified on: 25/01/2023</span>
-      </small>
+      </small> */}
       <div className="mb-6 flex gap-x-4 sm:mb-0 sm:mt-4">
-        <img
+        {/* <img
           className="hidden h-16 w-16 rounded-full"
           data-responsive="false"
-          src="https://hdev3-assets.cmcmarkets.com/neptune/images/learn/2/avatar.png"
+          src="https://assets.cmcmarkets.com/neptune/images/learn/avatar.png"
           alt=""
-        />
+        /> */}
         <div className="flex hidden flex-col justify-center">
           <a href="#" className="mb-1">
             Michael Hewson
@@ -161,16 +162,18 @@ const LearnPageHeader = ({
           <div className="lg:col-span-4">
             <div className="comp-learn-sticky-sidebar2 relative hidden lg:block">
               <div className="learn-sticky-sidebar-container z-40 rounded-3xl bg-white p-8 pt-56 text-navy-100 lg:absolute xl:pt-60">
-                <img
+                <Image
                   className="absolute left-0 top-0 w-full rounded-t-3xl border-b-[12px] border-b-azure-100"
-                  data-responsive="false"
-                  src="https://hdev3-assets.cmcmarkets.com/neptune/images/learn/2/sidebar-top-bg.png"
+                  src={awsImage("learn-article_sidebar-top-bg.png")}
+                  width={360}
+                  height={162}
                   alt=""
                 />
-                <img
+                <Image
                   className="absolute left-0 right-0 top-10 w-full"
-                  data-responsive="false"
-                  src="https://hdev3-assets.cmcmarkets.com/neptune/images/learn/2/sidebar-platform.png"
+                  src={awsImage("learn-article_sidebar-platform.png")}
+                  width={352}
+                  height={188}
                   alt=""
                 />
                 <div className="mb-6">
@@ -251,7 +254,7 @@ const LearnPageHeader = ({
                 </div>
                 <a
                   data-label="Create Account"
-                  href="https://hdev3-signup.cmcmarkets.com/#/emailRegistration?l=en&amp;r=gb&amp;p=SB&amp;i=demo&amp;e=&amp;sc=false&amp;iaid=null&amp;d=CMC&amp;lsrc=1"
+                  href="https://signup.cmcmarkets.com/#/emailRegistration?l=en&amp;r=gb&amp;p=SB&amp;i=demo&amp;e=&amp;sc=false&amp;iaid=null&amp;d=CMC&amp;lsrc=1"
                   className="js-modal btn btn-azure"
                   data-url="/en-gb/onboarding"
                   data-function="demo"

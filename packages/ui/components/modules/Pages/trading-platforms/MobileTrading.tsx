@@ -1,4 +1,4 @@
-import MobileAppQRCode from "@/components/global/Misc/MobileQRCode";
+import MobileAppQRCode from "../../../components/global/Misc/MobileQRCode";
 import constants, { awsImage } from "@/helpers/constants";
 import Image from "next/image";
 import Link from "next/link";

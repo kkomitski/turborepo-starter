@@ -1,4 +1,4 @@
-import Lines from "@/components/global/Misc/Lines";
+import Lines from "../../../components/global/Misc/Lines";
 import RightArrowSVG from "@/components/svg/RightArrowSVG";
 import {
   StaticImageData,

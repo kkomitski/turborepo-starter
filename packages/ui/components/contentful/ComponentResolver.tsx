@@ -1,6 +1,16 @@
-import { getComponentName, resolveComponent } from "@/helpers/contentful/components";
+import React from "react";
+import {
+  getComponentName,
+  resolveComponent,
+} from "@/helpers/contentful/components";
 
-const ComponentResolver = ({ content, debug }: { content: any; debug: any }) => {
+const ComponentResolver = ({
+  content,
+  debug,
+}: {
+  content: any;
+  debug: any;
+}) => {
   // If the content is undefined, return an empty fragment.
   if (typeof content === "undefined") {
     console.error("Content is undefined.");
@@ -18,13 +28,21 @@ const ComponentResolver = ({ content, debug }: { content: any; debug: any }) => 
   debug = { ...debug, componentName: `${componentFolder}/${componentName}` };
 
   if (process.env.ENV === "LOCAL" || process.env.ENV === "DEV") {
-    console.debug("Component path: @/components/contentful/" + componentFolder + "/" + componentName);
+    console.debug(
+      "Component path: @/components/contentful/" +
+        componentFolder +
+        "/" +
+        componentName
+    );
   }
 
   const Component = resolveComponent(componentFolder, componentName);
 
   if (Component) {
-    return <Component debug={debug} content={componentData} />;
+    return (
+      // NOT THIS ONE, THE NEPTUNE ONE
+        <Component debug={debug} content={componentData} />
+    )
   } else {
     return <div>Component not found.</div>;
   }

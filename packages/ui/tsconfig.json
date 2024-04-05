@@ -1,12 +1,14 @@
 {
   "extends": "tsconfig/react-library.json",
-  "include": ["./*", "./stories", "./components", "./components/**/*", "./"],
+  "include": ["./*", "./stories", "./components", "./components/*", "./components/**/*", "./"],
   "exclude": ["dist", "build", "node_modules"],
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"],
+      "@/helpers/*": ["./helpers/*"],
+      "@/components/*": ["./components/*"],
       "@components/*": ["./components/*"],
       "react": ["./node_modules/@types/react"]
     }

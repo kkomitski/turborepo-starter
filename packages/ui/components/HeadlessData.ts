@@ -93,7 +93,7 @@ export class HeadlessData {
       // Fetch news articles for any nNews components
       await HeadlessData.retrieveNewsArticles(data);
 
-      console.log("data", data.items[0].fields.references);
+      // console.log("data", data.items[0].fields.references);
 
       return data.items[0].fields;
     } else {

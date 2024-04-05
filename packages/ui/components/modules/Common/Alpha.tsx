@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
-import Lines from "@/components/global/Misc/Lines";
+import Lines from "../../../components/global/Misc/Lines";
 import AlphaLogoSVG from "@/components/svg/AlphaLogoSVG";
 import constants, { awsImage } from "@/helpers/constants";
 import Image from "next/image";

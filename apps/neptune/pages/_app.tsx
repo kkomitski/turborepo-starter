@@ -1,17 +1,11 @@
 import { ContentfulLivePreviewProvider } from "@contentful/live-preview/react";
-import "ui/styles/style.scss";
 import type { AppProps } from "next/app";
-import Layout from "../components/global/Layout";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+import Layout from "../components/_unused/global/Layout";
+import "ui/styles/style.scss";
 //import { redirect } from 'next/navigation';
-import {
-  getDeviceType,
-  getMobileOS,
-  getDesktopOS,
-  injectExternalScript,
-  cleanupExternalScript,
-} from "@/helpers/utils";
+import { getDesktopOS, getDeviceType, getMobileOS } from "@/helpers/utils";
 
 import Router from "next/router";
 
@@ -27,6 +21,8 @@ export default function App({ Component, pageProps }: AppProps) {
   //     router.push("/");
   //   }, []);
   // }
+
+  const isLive = process.env.ENV === "LIVE";
 
   useEffect(() => {
     document.body.classList.add("js-enable", getDeviceType(), getMobileOS()); // use for styling
@@ -55,9 +51,9 @@ export default function App({ Component, pageProps }: AppProps) {
     <Layout>
       <ContentfulLivePreviewProvider
         locale="en-GB"
-        enableInspectorMode={true}
-        enableLiveUpdates={true}
-        debugMode={true}
+        enableInspectorMode={!isLive}
+        enableLiveUpdates={!isLive}
+        debugMode={!isLive}
       >
         <Component {...pageProps} />
       </ContentfulLivePreviewProvider>

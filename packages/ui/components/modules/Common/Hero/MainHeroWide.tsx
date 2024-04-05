@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { ForwardedRef, ReactNode, forwardRef } from "react";
+import React, { ForwardedRef, ReactNode, forwardRef } from "react";
 import HeroAccoladesSectionA from "./Common/HeroAccoladesSectionA";
-import TrustpilotWidgetMicro from "@/components/widgets/TrustpilotWidgetMicro";
+import TrustpilotWidgetMicro from "../../../components/widgets/TrustpilotWidgetMicro";
 
 const MainHeroWide = forwardRef(
   (

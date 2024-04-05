@@ -5,16 +5,21 @@
 
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS, MARKS } from "@contentful/rich-text-types";
+import React from "react";
 import ComponentDebugger from "../debug/ComponentDebugger";
 import {
   defaultRichTextOptions,
   documentToReactComponentsWrapper,
-} from "@/helpers/contentful/richTextOptions";
+} from "../../../helpers/contentful/richTextOptions";
 
 const ContactInfo = ({ content, debug }: { content: any; debug: any }) => {
   const options = {
-    [BLOCKS.HEADING_2]: (node: any, children: any) => <h2 className="text-2xl">{children}</h2>,
-    [BLOCKS.HEADING_3]: (node: any, children: any) => <h3 className="text-2xl">{children}</h3>,
+    [BLOCKS.HEADING_2]: (node: any, children: any) => (
+      <h2 className="text-2xl">{children}</h2>
+    ),
+    [BLOCKS.HEADING_3]: (node: any, children: any) => (
+      <h3 className="text-2xl">{children}</h3>
+    ),
   };
 
   return (

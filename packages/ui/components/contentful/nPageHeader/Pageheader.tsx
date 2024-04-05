@@ -1,9 +1,13 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import React from "react";
 import ComponentDebugger from "../debug/ComponentDebugger";
-import { useContentfulInspectorMode, useContentfulLiveUpdates } from "@contentful/live-preview/react";
+import {
+  useContentfulInspectorMode,
+  useContentfulLiveUpdates,
+} from "@contentful/live-preview/react";
 
 const Pageheader = ({ content, debug }: { content: any; debug: any }) => {
-  const data = useContentfulLiveUpdates(content);
+  const data = process.env.STORYBOOK ? content : useContentfulLiveUpdates(content);
   const inspectorProps = useContentfulInspectorMode({
     entryId: content.sys.id,
   });

@@ -2,10 +2,15 @@ import Button from "@/components/elements/Button";
 import OnboardingButton from "@/components/elements/OnboardingButton";
 import { addHttps, sliceOnboardingParams } from "@/helpers/contentful";
 import Image from "next/image";
+import React from "react";
+
 import { awsImage } from "@/helpers/constants";
-import { documentToReactComponentsWrapper } from "@/helpers/contentful/richTextOptions";
+import { documentToReactComponentsWrapper } from "../../../helpers/contentful/richTextOptions";
 import { ComponentStylingOptions } from "@/helpers/contentful/components";
-import { useContentfulInspectorMode, useContentfulLiveUpdates } from "@contentful/live-preview/react";
+import {
+  useContentfulInspectorMode,
+  useContentfulLiveUpdates,
+} from "@contentful/live-preview/react";
 
 type Content = {
   fields: {
@@ -35,12 +40,18 @@ const AwardsCard = ({
   const inspectorProps = useContentfulInspectorMode({
     entryId: content.sys.id,
   });
-  const data = useContentfulLiveUpdates(content);
+  const data = process.env.STORYBOOK ? content : useContentfulLiveUpdates(content);
   const columnWidth = stylingOptions?.columnClass || "w-full";
   return (
     <div className="flex flex-col gap-x-4 px-6 sm:px-0 md:items-start">
       {/* Ribbon Image */}
-      <Image className="mb-2" src={awsImage("common_ribbon-navy.svg")} width={78} height={32} alt="Ribbon" />
+      <Image
+        className="mb-2"
+        src={awsImage("common_ribbon-navy.svg")}
+        width={78}
+        height={32}
+        alt="Ribbon"
+      />
 
       <div>
         {/* Sub Header - Year of award */}

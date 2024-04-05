@@ -4,8 +4,8 @@
 
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import Script from "next/script";
-import Favicons from "@/components/global/Head/Favicons";
-import SocialMetaTags from "@/components/global/Head/SocialMetaTags";
+import Favicons from "@/components/_unused/global/Head/Favicons";
+import SocialMetaTags from "@/components/_unused/global/Head/SocialMetaTags";
 import { getHtmlLang, getLanguage, getRegion } from "@/helpers/constants";
 
 export default class MyDocument extends Document {

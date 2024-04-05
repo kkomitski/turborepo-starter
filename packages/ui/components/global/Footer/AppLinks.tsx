@@ -1,11 +1,14 @@
 import constants, { awsImage } from "@/helpers/constants";
 import Image from "next/image";
+import React from "react";
+
 const AppLinks = () => {
   return (
     <div className="border-t border-t-navy-70 pb-14 pt-4 md:col-span-7">
       <span className="mb-4 block uppercase"> Download our app </span>
       <p>
-        With our intuitive trading apps, you can keep an eye on the markets and your open positions on the go
+        With our intuitive trading apps, you can keep an eye on the markets and
+        your open positions on the go
       </p>
       <div className="flex gap-x-6">
         <a

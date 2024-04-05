@@ -1,4 +1,4 @@
-;
+import React from "react";
 import InstrumentsTable from "@/components/tables/InstrumentTable/InstrumentsTable";
 import {
   ColumnMapping,
@@ -6,7 +6,7 @@ import {
 } from "@/components/tables/InstrumentTable/InstrumentTableTypes";
 import Image from "next/image";
 import { awsImage } from "@/helpers/constants";
-import Lines from "@/components/global/Misc/Lines";
+import Lines from "../../../components/global/Misc/Lines";
 
 const FXAdvantage = () => {
   const columnMapping: ColumnMapping[] = [

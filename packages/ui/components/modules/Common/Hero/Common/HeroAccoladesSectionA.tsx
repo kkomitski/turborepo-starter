@@ -1,7 +1,7 @@
-import Lines from "@/components/global/Misc/Lines";
+import Lines from "../../../components/global/Misc/Lines";
 import constants, { awsImage } from "@/helpers/constants";
 import Image from "next/image";
-;
+import React from "react";
 
 const HeroAccoladesSectionA = ({
   fscsFootnote,

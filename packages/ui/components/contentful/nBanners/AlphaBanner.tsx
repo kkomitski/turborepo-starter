@@ -5,13 +5,16 @@
  * Usual Title: "Unlock your potential"
  */
 
-import Lines from "@/components/global/Misc/Lines";
-import AlphaLogoSVG from "@/components/svg/AlphaLogoSVG";
+import Lines from "../../../components/global/Misc/Lines";
+import AlphaLogoSVG from "../../../components/svg/AlphaLogoSVG";
 import { awsImage } from "@/helpers/constants";
 import { addDataAttributes, addHttps } from "@/helpers/contentful";
-import { renderComponents } from "@/helpers/contentful/components";
-import { documentToReactComponentsWrapper } from "@/helpers/contentful/richTextOptions";
-import { useContentfulInspectorMode, useContentfulLiveUpdates } from "@contentful/live-preview/react";
+import { renderComponents } from "../../../helpers/contentful/components";
+import { documentToReactComponentsWrapper } from "../../../helpers/contentful/richTextOptions";
+import {
+  useContentfulInspectorMode,
+  useContentfulLiveUpdates,
+} from "@contentful/live-preview/react";
 import { BLOCKS } from "@contentful/rich-text-types";
 import Image from "next/image";
 import ComponentDebugger from "../debug/ComponentDebugger";
@@ -20,15 +23,17 @@ const AlphaBanner = ({ content, debug }: { content: any; debug: any }) => {
   const inspectorProps = useContentfulInspectorMode({
     entryId: content.sys.id,
   });
-  // const data = useContentfulLiveUpdates(content);
-  const data = content;
+  const data = process.env.STORYBOOK ? content : useContentfulLiveUpdates(content);
 
   return (
-    <section className="Module relative overflow-hidden bg-black text-white" {...addDataAttributes(debug)}>
+    <section
+      className="Module relative overflow-hidden bg-black text-white"
+      {...addDataAttributes(debug)}
+    >
       <ComponentDebugger debug={debug} content={content} />
 
       {/* Background Image */}
-      {/* <Image
+      <Image
         className="absolute top-0 hidden h-full object-cover object-top lg:right-0 lg:block 2xl:right-[20vw] 2xl:w-[76%]"
         width={1920}
         height={900}
@@ -37,19 +42,21 @@ const AlphaBanner = ({ content, debug }: { content: any; debug: any }) => {
         {...inspectorProps({
           fieldId: "backgroundImage",
         })}
-      /> */}
+      />
 
       {/* Mobile Image */}
-      {/* <Image
+      <Image
         className="absolute bottom-14 h-auto w-full lg:hidden xs:left-0 xs:right-0 xs:mx-auto xs:max-w-[400px] xs:object-cover"
         width={750}
         height={900}
         alt=""
-        src={addHttps(data.fields.backgroundImage.fields.mobileVariant.fields.file.url)}
+        src={addHttps(
+          data.fields.backgroundImage.fields.mobileVariant.fields.file.url
+        )}
         {...inspectorProps({
           fieldId: "backgroundImage",
         })}
-      /> */}
+      />
 
       {/* Lines left of "Alpha" */}
       <Lines left>
@@ -71,7 +78,11 @@ const AlphaBanner = ({ content, debug }: { content: any; debug: any }) => {
         <div className="grid lg:grid-cols-12 lg:gap-x-20 lg:gap-y-0">
           <div className="mb-12 lg:col-span-8 lg:mb-0 lg:pt-4 xl:pt-12">
             {/* Alpha Logo (currently not editable in contentful) */}
-            <AlphaLogoSVG className="mb-4 ml-2 h-auto lg:mb-8 lg:ml-4 2xl:w-auto" width={200} height={44} />
+            <AlphaLogoSVG
+              className="mb-4 ml-2 h-auto lg:mb-8 lg:ml-4 2xl:w-auto"
+              width={200}
+              height={44}
+            />
 
             {/* Heading */}
             <h2
@@ -104,7 +115,9 @@ const AlphaBanner = ({ content, debug }: { content: any; debug: any }) => {
                 },
               })}
               {/* CTA Button(s) */}
-              <div className="flex gap-x-2">{renderComponents(data.fields.features)}</div>
+              <div className="flex gap-x-2">
+                {renderComponents(data.fields.features)}
+              </div>
             </div>
           </div>
 
@@ -124,7 +137,9 @@ const AlphaBanner = ({ content, debug }: { content: any; debug: any }) => {
 
             {/* This section is currently not editable in contentful */}
             <div className="text-center">
-              <small className="mb-4 block uppercase tracking-[1.6px] lg:mb-6">exclusive to</small>
+              <small className="mb-4 block uppercase tracking-[1.6px] lg:mb-6">
+                exclusive to
+              </small>
 
               {/* CMC Logo */}
               <Image

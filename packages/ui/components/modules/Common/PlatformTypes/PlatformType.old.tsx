@@ -1,8 +1,8 @@
 //OLD AND UNUSED
 
 import AppleStoreSVG from "@/components/svg/AppStoreSVG";
-import GoBackArrowSVG from "@/components/svg/GoBackArrowSVG";
-import PlayStoreSVG from "@/components/svg/PlayStoreSVG";
+import GoBackArrowSVG from "../../../components/svg/GoBackArrowSVG";
+import PlayStoreSVG from "../../../components/svg/PlayStoreSVG";
 import QRCodeSVG from "@/components/svg/QRCodeSVG";
 import RightArrowSVG from "@/components/svg/RightArrowSVG";
 import constants, { awsImage } from "@/helpers/constants";

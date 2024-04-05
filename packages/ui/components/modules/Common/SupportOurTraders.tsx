@@ -1,4 +1,6 @@
 import constants from "@/helpers/constants";
+import React from "react";
+
 type SupportOurTradersProps = {
   type: "sb" | "cfd";
 };
@@ -7,7 +9,9 @@ const SupportOurTraders = ({ type }: SupportOurTradersProps) => {
   return (
     <section className="Module relative bg-navy-100 text-white">
       <div className="main-xl-container relative">
-        <h2 className="headline-lg relative mb-12 text-center">How we support our traders</h2>
+        <h2 className="headline-lg relative mb-12 text-center">
+          How we support our traders
+        </h2>
         <div className="grid gap-x-8 gap-y-16 md:grid-cols-3 lg:gap-x-16">
           <div>
             <div className="mb-6 border-b border-white pb-6">
@@ -19,7 +23,14 @@ const SupportOurTraders = ({ type }: SupportOurTradersProps) => {
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <rect x="27.167" y="74.1387" width="106.667" height="66.1992" rx="14" fill="#325FFF" />
+                <rect
+                  x="27.167"
+                  y="74.1387"
+                  width="106.667"
+                  height="66.1992"
+                  rx="14"
+                  fill="#325FFF"
+                />
                 <path
                   d="M80.5003 100.338V113.671M40.5003 140.338H120.5C127.864 140.338 133.834 134.368 133.834 127.005V87.0046C133.834 79.6408 127.864 73.6712 120.5 73.6712H40.5003C33.1365 73.6712 27.167 79.6408 27.167 87.0046V127.005C27.167 134.368 33.1365 140.338 40.5003 140.338ZM107.167 73.6712V47.0046C107.167 32.277 95.2279 20.3379 80.5003 20.3379C65.7727 20.3379 53.8337 32.277 53.8337 47.0046V73.6712H107.167Z"
                   stroke="white"
@@ -30,12 +41,14 @@ const SupportOurTraders = ({ type }: SupportOurTradersProps) => {
               </svg>
             </div>
             <div>
-              <h3 className="mb-2 text-[32px]">Build trust</h3>
+              <h3 className="text-[32px] mb-2">Build trust</h3>
               <p>
-                With {constants.DIDS.YEARS_ACTIVE} years&apos; industry experience, we&apos;re constantly
-                evolving. We&apos;re regulated by the Financial Conduct Authority (FCA), ensuring adherence to
-                the highest standards of financial practice. Under the FSCS scheme, your eligible deposits are
-                protected up to £85,000 in the unlikely event that our business went into liquidation.
+                With {constants.DIDS.YEARS_ACTIVE} years&apos; industry
+                experience, we&apos;re constantly evolving. We&apos;re regulated
+                by the Financial Conduct Authority (FCA), ensuring adherence to
+                the highest standards of financial practice. Under the FSCS
+                scheme, your eligible deposits are protected up to £85,000 in
+                the unlikely event that our business went into liquidation.
               </p>
             </div>
           </div>
@@ -63,11 +76,13 @@ const SupportOurTraders = ({ type }: SupportOurTradersProps) => {
               </svg>
             </div>
             <div>
-              <h3 className="mb-2 text-[32px]">Contact us 24/5</h3>
+              <h3 className="text-[32px] mb-2">Contact us 24/5</h3>
               <p>
-                You can contact our Client Management team whenever the markets are open, from Sunday night
-                through to Friday night – <a href="mailto:clientmanagement@cmcmarkets.co.uk">email us</a> or
-                call <a href="tel:+44%20(0)20%207170%208200">+44 (0)20 7170 8200</a>.
+                You can contact our Client Management team whenever the markets
+                are open, from Sunday night through to Friday night –{" "}
+                <a href="mailto:clientmanagement@cmcmarkets.co.uk">email us</a>{" "}
+                or call{" "}
+                <a href="tel:+44%20(0)20%207170%208200">+44 (0)20 7170 8200</a>.
               </p>
             </div>
           </div>
@@ -95,11 +110,12 @@ const SupportOurTraders = ({ type }: SupportOurTradersProps) => {
               </svg>
             </div>
             <div>
-              <h3 className="mb-2 text-[32px]">Educational content</h3>
+              <h3 className="text-[32px] mb-2">Educational content</h3>
               <p>
-                Our learn library contains a range of free educational resources on everything from the stock
-                markets to {type === "sb" ? "spread betting" : "CFD trading"}. We want to help traders
-                understand the wider world of trading.
+                Our learn library contains a range of free educational resources
+                on everything from the stock markets to{" "}
+                {type === "sb" ? "spread betting" : "CFD trading"}. We want to
+                help traders understand the wider world of trading.
               </p>
             </div>
           </div>

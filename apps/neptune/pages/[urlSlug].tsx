@@ -1,13 +1,13 @@
 // @ts-nocheck
-import { HeadlessComponents } from "ui/components/HeadlessComponents";
-import { HeadlessData } from "ui/components/HeadlessData";
+import { HeadlessComponents } from "@/components/HeadlessComponents";
+import { HeadlessData } from "@/components/HeadlessData";
 
 export const getStaticPaths = async () => {
   // to be implemented
 
   const paths = [
-    { params: { urlSlug: "about-us" } },
-    { params: { urlSlug: "markets-indices" } },
+    // { params: { urlSlug: "about-us" } },
+    // { params: { urlSlug: "markets-indices" } },
   ];
 
   return {
@@ -17,7 +17,7 @@ export const getStaticPaths = async () => {
 };
 
 export async function getStaticProps(context: any) {
-  console.log("context", context);
+  // console.log("context", context);
   let urlSlug = context.params?.urlSlug;
 
   if (typeof urlSlug === "undefined" || urlSlug === "") {

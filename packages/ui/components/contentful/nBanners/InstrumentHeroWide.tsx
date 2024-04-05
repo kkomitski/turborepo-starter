@@ -1,7 +1,7 @@
-import TrustpilotWidgetMicro from "@/components/widgets/TrustpilotWidgetMicro";
+import TrustpilotWidgetMicro from "../../../components/widgets/TrustpilotWidgetMicro";
 import { addDataAttributes, addHttps } from "@/helpers/contentful";
-import { renderComponents } from "@/helpers/contentful/components";
-import { documentToReactComponentsWrapper } from "@/helpers/contentful/richTextOptions";
+import { RenderComponents, renderComponents } from "../../../helpers/contentful/components";
+import { documentToReactComponentsWrapper } from "../../../helpers/contentful/richTextOptions";
 import {
   useContentfulInspectorMode,
   useContentfulLiveUpdates,
@@ -20,11 +20,12 @@ const InstrumentHeroWide = ({
   const inspectorProps = useContentfulInspectorMode({
     entryId: content.sys.id,
   });
-  // const data = useContentfulLiveUpdates(content);
-  const data = content;
+
+  const data = process.env.STORYBOOK ? content : useContentfulLiveUpdates(content);
 
   const enableTrustpilot = data.fields?.extraContent?.includes("Trustpilot");
 
+  console.log(debug)
   return (
     <>
       <section
@@ -138,7 +139,13 @@ const InstrumentHeroWide = ({
                 {/* CTA Buttons & Additional Text */}
                 {data.fields.features && (
                   <div className="mb-6 flex flex-col gap-y-2 pl-8">
-                    {renderComponents(data.fields.features)}
+                    <RenderComponents items={data.fields.features}/>
+                  </div>
+                )}
+                {/* CTA Buttons & Additional Text */}
+                {data.fields.features && (
+                  <div className="mb-6 flex flex-col gap-y-2 pl-8">
+                    <RenderComponents items={data.fields.features}/>
                   </div>
                 )}
 

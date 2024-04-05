@@ -1,7 +1,8 @@
 import RightArrowSVG from "@/components/svg/RightArrowSVG";
-import TrustpilotWidgetMicro from "@/components/widgets/TrustpilotWidgetMicro";
+import TrustpilotWidgetMicro from "../../../components/widgets/TrustpilotWidgetMicro";
 import Image from "next/image";
 import Link from "next/link";
+import React from "react";
 import HeroAccoladesSectionA from "../../../Common/Hero/Common/HeroAccoladesSectionA";
 
 const SwitchersHero = () => {
@@ -36,17 +37,21 @@ const SwitchersHero = () => {
               <div className="relative my-4 flex w-full flex-shrink-0 flex-col flex-wrap md:mx-auto md:my-0 md:flex-row md:items-center">
                 <div className="flex w-full flex-col text-white md:mb-0 md:w-5/12">
                   <div className="mb-2">
-                    <h1 className="-ml-4 mb-6 border-l-8 border-l-azure-100 pl-4 text-[48px] leading-tight md:-mr-5 md:ml-0 md:pl-6 md:pr-0 md:text-5xl lg:text-[64px]">
+                    <h1 className="mb-6 -ml-4 border-l-8 border-l-azure-100 pl-4 text-[48px] leading-tight md:ml-0 md:-mr-5 md:pl-6 md:pr-0 md:text-5xl lg:text-[64px]">
                       <span className="block">Spread your wings.</span>
                       <span className="block">Switch to CMC</span>
                     </h1>
                     <p className="mb-10 pl-3 text-xl md:mb-10 md:pl-9 xl:pr-8">
-                      When you run into turbulence you need tools you can trust. Discover the award-winning
-                      spread betting and CFD platform for active traders.<sup>1</sup>
+                      When you run into turbulence you need tools you can trust.
+                      Discover the award-winning spread betting and CFD platform
+                      for active traders.<sup>1</sup>
                     </p>
 
                     <div className="mb-2 pl-3 md:mb-0 md:pl-9">
-                      <Link href="/lp/switch" className="btn btn-white btn-with-icon stroke-navy-100">
+                      <Link
+                        href="/lp/switch"
+                        className="btn btn-white btn-with-icon stroke-navy-100"
+                      >
                         <span>Find out more</span>
                         <RightArrowSVG />
                       </Link>
@@ -78,7 +83,7 @@ const SwitchersHero = () => {
                     </Link>
                   </div>
 
-                  <div className="-ml-7 mb-4 hidden pl-9 md:mb-0 md:block">
+                  <div className="mb-4 -ml-7 hidden pl-9 md:mb-0 md:block">
                     <TrustpilotWidgetMicro theme="dark" />
                   </div>
                 </div>
@@ -88,7 +93,10 @@ const SwitchersHero = () => {
           <div className="z-2 relative flex h-[300px] w-full items-center justify-center md:hidden">
             <div>
               <div className="flex flex-col">
-                <Link href="/lp/switch" className="btn btn-white btn-with-icon stroke-navy-100">
+                <Link
+                  href="/lp/switch"
+                  className="btn btn-white btn-with-icon stroke-navy-100"
+                >
                   <span>Discover more</span>
                   <RightArrowSVG />
                 </Link>

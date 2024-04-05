@@ -1,6 +1,8 @@
-import OnboardingButton from "@/components/elements/OnboardingButton";
+import OnboardingButton from "../../../components/elements/OnboardingButton";
 import { overrideOnboardingParams } from "@/helpers/utils";
 import { useRouter } from "next/router";
+import React from "react";
+
 const MobileCTA = () => {
   const router = useRouter();
   const onboardingParams = overrideOnboardingParams(router.pathname);
@@ -13,7 +15,12 @@ const MobileCTA = () => {
       >
         Log in
       </a>
-      <OnboardingButton account="live" variant="azure" params={onboardingParams} className="px-4 py-2">
+      <OnboardingButton
+        account="live"
+        variant="azure"
+        params={onboardingParams}
+        className="px-4 py-2"
+      >
         <span className="hidden lg:inline">Start trading</span>
         <span className="inline lg:hidden">Trade</span>
       </OnboardingButton>

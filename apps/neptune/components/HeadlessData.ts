@@ -103,7 +103,7 @@ export class HeadlessData {
 
   /**
    * Retrieves news articles for each nNews component
-   * @param data
+   * uiparam data
    */
   private static async retrieveNewsArticles(
     data: EntryCollection<CustomEntryFields>

@@ -1,6 +1,0 @@
-.color-preference-toggle {
-    &:checked ~ .dot {
-        transform: translateX(200%);
-        background-color: #fff;
-    }
-}

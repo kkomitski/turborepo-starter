@@ -3,10 +3,10 @@
  * @description A generic section of content that can be used to display a collection of items.
  */
 
-import Lines from "@/components/global/Misc/Lines";
+import Lines from "../../../components/global/Misc/Lines";
 import { addDataAttributes } from "@/helpers/contentful";
-import { renderComponents } from "@/helpers/contentful/components";
-import { documentToReactComponentsWrapper } from "@/helpers/contentful/richTextOptions";
+import { RenderComponents } from "../../../helpers/contentful/components";
+import { documentToReactComponentsWrapper } from "../../../helpers/contentful/richTextOptions";
 import {
   useContentfulInspectorMode,
   useContentfulLiveUpdates,
@@ -17,7 +17,7 @@ const Section = ({ content, debug }: { content: any; debug: any }) => {
   const inspectorProps = useContentfulInspectorMode({
     entryId: content.sys.id,
   });
-  const data = useContentfulLiveUpdates(content);
+  const data = process.env.STORYBOOK ? content : useContentfulLiveUpdates(content);
 
   // If the content is undefined, return an empty fragment.
   if (typeof content === "undefined") {
@@ -75,8 +75,8 @@ const Section = ({ content, debug }: { content: any; debug: any }) => {
       gridClass = "";
       break;
     case "Two Column":
-      gridClass = "grid";
-      columnClass = "md:grid-cols-2";
+      gridClass = "grid md:grid-cols-2";
+      columnClass = "";
       break;
     case "Three Column":
       gridClass = "md:grid-cols-3";
@@ -145,69 +145,79 @@ const Section = ({ content, debug }: { content: any; debug: any }) => {
       )}
 
       <div className="main-xl-container">
-        <div
-          className={`mb-10 lg:mb-20 ${
-            headerAlignment === "Left"
-              ? "lg:w-4/12"
-              : headerAlignment === "Center"
-              ? "mx-auto text-center"
-              : headerAlignment === "Right"
-              ? "ml-auto lg:w-4/12"
-              : ""
-          }`}
-        >
-          {/* Column Header */}
-          {data.fields.header && (
-            <h2
-              className={`headline-lg relative mb-6 max-w-3xl ${borderColor} ${
-                headerAlignment === "Left"
-                  ? "-ml-6 border-l-8 pl-4"
-                  : headerAlignment === "Center"
-                  ? "mx-auto text-center"
-                  : headerAlignment === "Right"
-                  ? "ml-auto border-r-8 pr-4 text-right"
-                  : ""
-              }`}
-              {...inspectorProps({
-                fieldId: "header",
-              })}
-            >
-              {documentToReactComponentsWrapper(data.fields.header, {
-                type: "heading",
-              })}
-            </h2>
-          )}
+        {data.fields.header && (
+          <div
+            className={`mb-10 lg:mb-20 ${
+              headerAlignment === "Left"
+                ? "lg:w-4/12"
+                : headerAlignment === "Center"
+                ? "mx-auto text-center"
+                : headerAlignment === "Right"
+                ? "ml-auto lg:w-4/12"
+                : ""
+            }`}
+          >
+            {/* Column Header */}
+            {data.fields.header && (
+              <h2
+                className={`headline-lg relative mb-6 max-w-3xl ${borderColor} ${
+                  headerAlignment === "Left"
+                    ? "-ml-6 border-l-8 pl-4"
+                    : headerAlignment === "Center"
+                    ? "mx-auto text-center"
+                    : headerAlignment === "Right"
+                    ? "ml-auto border-r-8 pr-4 text-right"
+                    : ""
+                }`}
+                {...inspectorProps({
+                  fieldId: "header",
+                })}
+              >
+                {documentToReactComponentsWrapper(data.fields.header, {
+                  type: "heading",
+                })}
+              </h2>
+            )}
 
-          {/* Column Description */}
-          {data.fields.description && (
-            <div
-              className={`text-xl ${
-                headerAlignment === "Left"
-                  ? "text-left"
-                  : headerAlignment === "Center"
-                  ? "mx-auto text-center"
-                  : headerAlignment === "Right"
-                  ? "ml-auto text-right"
-                  : ""
-              }`}
-              {...inspectorProps({
-                fieldId: "description",
-              })}
-            >
-              {documentToReactComponentsWrapper(data.fields.description, {
-                type: "content",
-              })}
-            </div>
-          )}
-        </div>
+            {/* Column Description */}
+            {data.fields.description && (
+              <div
+                className={`text-xl ${
+                  headerAlignment === "Left"
+                    ? "text-left"
+                    : headerAlignment === "Center"
+                    ? "mx-auto text-center"
+                    : headerAlignment === "Right"
+                    ? "ml-auto text-right"
+                    : ""
+                }`}
+                {...inspectorProps({
+                  fieldId: "description",
+                })}
+              >
+                {documentToReactComponentsWrapper(data.fields.description, {
+                  type: "content",
+                })}
+              </div>
+            )}
+          </div>
+        )}
 
         {/* Items */}
-        <div className={`relative grid ${gridClass} ${columnGapClass}`}>
-          {renderComponents(data.fields.items, {
+        {/* <div data-sub={true} className={`relative grid ${gridClass} ${columnGapClass}`}> */}
+          <RenderComponents
+            items={data.fields.items}
+            stylingOptions={{
+              columnClass: columnClass,
+              theme: theme,
+            }}
+            className={`relative grid ${gridClass} ${columnGapClass}`}
+          />
+          {/* {RenderComponents(data.fields.items, {
             columnClass: columnClass,
             theme: theme,
-          })}
-        </div>
+          })} */}
+        {/* </div> */}
       </div>
     </section>
   );
