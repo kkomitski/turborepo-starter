@@ -83,7 +83,7 @@ const nButton = ({
           account={onboardingAccountType}
           icon={icon}
           debug={debug}
-          className="pb-10"
+          // className="pb-10"
         >
           {title}
         </OnboardingButton>
