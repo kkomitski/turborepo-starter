@@ -21,7 +21,7 @@ type Props = {
 } & AnchorHTMLAttributes<HTMLAnchorElement>; // Merge with AnchorHTMLAttributes
 
 const OnboardingButton = (props: Props) => {
-  const { variant, params, account, size, children, ...rest } = props;
+  const { variant, params, account, size, children, className, ...rest } = props;
 
   // Fallback params if params not provided
   const defaultIframeParams = {
