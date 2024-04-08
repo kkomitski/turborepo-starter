@@ -84,7 +84,7 @@ const nButton = ({
           icon={icon}
           debug={debug}
         >
-          {title}
+          {title} ..
         </OnboardingButton>
       )}
 

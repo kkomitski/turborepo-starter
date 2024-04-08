@@ -6,6 +6,7 @@
   "scripts": {
     "build": "next build",
     "build-storybook": "storybook build",
+    "chromatic": "npx chromatic --project-token=chpt_1b34107589399c7 --exit-once-completed",
     "dev": "storybook dev -p 6006",
     "devv": "next dev",
     "lint": "next lint",
@@ -36,6 +37,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
+    "chromatic": "^11.3.0",
     "eslint": "^8",
     "eslint-config-next": "14.1.4",
     "eslint-plugin-storybook": "^0.8.0",

@@ -81,15 +81,15 @@ const Wrapper = ({ children } : any) => {
           {children.props.content.sys.contentType.sys.id}/{children.type.__docgenInfo.displayName}
         </div>
         {
-          containersArr.length ? containersArr.map((sub: any, index: any) => {
+          containersArr?.length ? containersArr.map((sub: any, index: any) => {
             return (
               <div key={index} style={{ marginLeft: `${index + 1 * 10}px` }}>
                 <div data-title={`sub-${index}`} data-type="sub" onMouseEnter={addBorder} onMouseLeave={removeBorder} className='cursor-pointer'>Features</div>
                 <div className='flex flex-col pb-5'>
                   {sub.components && sub.components.map((component: any, index: any) => {
-                    console.log(component)
-                    console.log(component.dataset)
-                    return <a href={`${window.location.origin }/?path=/story/neptune-${component.dataset.id.length ? component.dataset.id.split("_")[0].toLowerCase() : component.dataset.id.toLowerCase()}`} key={index} data-title={component.dataset.id} data-type="component" className='pr-6 cursor-pointer' onMouseEnter={addBorder} onMouseLeave={removeBorder}>- {component.dataset.id.replace("-", "/")}</a>
+                    // console.log("comp", component)
+                    // console.log("comp-dataset", component.dataset)
+                    return <a href={`${window.location.origin }/?path=/story/neptune-${component.dataset.id && component?.dataset?.id.length ? component.dataset.id.split("_")[0].toLowerCase() : component.dataset.id.toLowerCase()}`} key={index} data-title={component.dataset.id} data-type="component" className='pr-6 cursor-pointer' onMouseEnter={addBorder} onMouseLeave={removeBorder}>- {component.dataset.id.replace("-", "/")}</a>
                   })}
                 </div>
               </div>
